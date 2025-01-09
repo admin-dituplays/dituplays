@@ -1,0 +1,193 @@
+// ===============================================================================
+// HEADER
+// ===============================================================================
+
+// Header
+.top-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $dituMainGradient;
+  text-align: center;
+
+  @media (min-width: $mobile) {
+    min-height: rem(38);
+  }
+  
+  // .top-banner__text
+  &__text {
+    font-weight: 700;
+    font-size: rem(12);
+    margin: rem(6);
+    line-height: normal;
+
+    @media (min-width: $mobileSmall) {
+      font-size: rem(14);
+    }
+    @media (min-width: $mobile) {
+      font-size: rem(18);
+    }
+  }
+}
+.header {
+  background-color: $headerBackgroundColor;
+  // .header__container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    gap: rem(8);
+    min-height: rem(44);
+
+    @media (min-width: $mobile) {
+      min-height: rem(80);
+    } 
+  }
+  // .header__controls-container
+  &__controls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(4);
+  }
+  // .header__menu-btn
+  &__menu-btn {
+    display: block;
+		position: relative;
+		width: rem(40);
+		height: rem(40);
+		z-index: 5;
+    transition: background-color 0.2s;
+    border-radius: rem(6);
+
+    @media (min-width: $mobile) {
+      width: rem(40);
+		  height: rem(40);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $headerActionsHover;
+      }
+    }
+		@media (any-hover: none) {
+			cursor: default;
+		}
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0;
+			position: absolute;
+			left: rem(8);
+      width: calc(100% - rem(16));
+      height: rem(2);
+			background-color: $textColorLight;
+      border-radius: rem(20);
+		}
+		&::before {
+			top: calc(50% - rem(8));
+		}
+		&::after {
+			top: calc(50% + rem(6));
+		}
+		span {
+			top: 50%;
+      transform: translateY(-50%);
+		}
+  }
+  // .header__catalog-link
+  &__catalog-link {
+    display: none;
+    gap: rem(8);
+    padding: rem(12) rem(16);
+    height: rem(40);
+    border-radius: rem(6);
+    transition: background-color 0.2s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $headerActionsHover;
+      }
+    }
+    @media (min-width: $mobile) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  // .header__catalog-link-text
+  &__catalog-link-text {
+    color: $textColorLight;
+    font-size: rem(22);
+    font-weight: 700;
+  }
+  // .header__catalog-text-short
+  &__catalog-text-short {
+  }
+  // .header__catalog-text-full
+  &__catalog-text-full {
+    display: none;
+    @media (min-width: $tablet) {
+      display: inline;
+    }
+  }
+
+
+
+  // .header__branding-container
+  &__branding-container {
+    flex: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: rem(12) rem(4);
+
+    @media (min-width: $mobile) {
+      justify-content: center;
+    }
+  }
+  // .header__logo-container
+  &__logo-container {
+    display: block;
+    max-width: rem(64);
+
+    @media (min-width: $mobileSmall) {
+      max-width: rem(80);
+    } 
+    @media (min-width: $mobile) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: rem(100);
+    }
+  }
+  // .header__logo-img
+  &__logo-img {
+    width: 100%;
+  }
+
+
+
+  // .header__actions-container
+  &__actions-container {
+  }
+  // .header__contacts-btn
+  &__contacts-btn {
+    padding: rem(12);
+    color: $textColorLight;
+    font-size: rem(12);
+    font-weight: 600;
+
+    @media (min-width: $mobileSmall) {
+      font-size: rem(16);
+    }    
+  }
+}
+
+// ===============================================================================
+// HEADER
+// ===============================================================================

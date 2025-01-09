@@ -1,0 +1,285 @@
+@use "sass:math";
+@import "utils/mixins";
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:regular,500,600,700,800,900&display=swap');
+
+// Variables
+$fontFamily: "Nunito", sans-serif;
+// $fontFamilyMinor: "Plus Jakarta Sans", sans-serif;
+$fontSize: rem(14);
+
+//TODO: Colors
+// $wrapperBackground: #fff;
+
+$dituMainGradient: linear-gradient(to bottom right, #1BC1B2, #66E2A3, #B2D763);
+
+
+
+
+$bodyBackgroundColor: #FFFFFF;
+
+$headerBackgroundColor: #333333;
+
+
+$headerActionsHover: #707070;
+
+$footerBackgroundColor: #333333;
+
+
+$borderColor: #DFDFDF;
+
+
+$buttonsBackgroundColor: #7BB57C;
+$buttonsBackgroundHover: #4C7A4D;
+
+
+// $backgroundColorDark: #2D3250;
+// $backgroundColorAlt: #7077A1;
+// $accentColor: #F0FF00;
+
+// $bordersColor: #B6BBC4;
+
+// $accentColorHover: #d1db4b;
+
+// $textNotesColor: #53667C;
+// $errorColor: #f05050;
+
+
+// Text Colors
+$textColorMain: #333333;
+$textColorLight: #F3F3F3; 
+$textColorHint: #999999;
+
+ 
+
+
+// Slider
+$sliderElementsColorLight: #F3F3F3; 
+$sliderElementsColorDark: #333333; 
+
+
+// Containers
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1888;
+$containerPadding: 32;
+
+// First breakpoint
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Breakpoints
+$pc: em($containerWidth);
+$pcSmall: em(1023.98);
+$tablet: em(991.98); // Tablets
+$mobile: em(767.98); // Phone L
+$mobileSmall: em(424.98); // Phone S
+// $mobileSmall: em(479.98); // Phone S from FFL
+
+@import "utils/null";
+
+body {
+  background-color: $bodyBackgroundColor;
+	// scrollbar-gutter: stable;
+	// Скролл заблоковано
+	.lock & {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+	.loaded & {
+	}
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+  // background-color: $backgroundColor;
+	@supports (overflow: clip) {
+		overflow: clip;
+	}
+	// sticky footer
+	> main {
+		flex: 1 1 auto;
+	}
+}
+
+// Smooth
+[class*="__container"] {
+  @if ($maxWidthContainer>0) {
+    max-width: rem($containerWidth);
+    margin: 0 auto;
+  }
+  @if ($containerPadding>0) {
+    @if ($maxWidthContainer>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    } @else {
+      @include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
+      @include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
+    }
+  }
+}
+
+// With Breakpoits
+// [class*="__container"] {
+//   margin: 0 auto;
+//   width: 100%;
+//   padding: 0 rem(math.div($containerPadding, 2));
+
+//   @media (min-width: $mobile) {
+//     width: rem($containerWidth);
+//   }
+//   @media (max-width: $tablet) {
+//     max-width: rem(750);
+//   }
+// }
+
+@import "components/header";
+
+
+
+
+
+
+
+
+@import "components/nav";
+
+
+
+
+
+
+
+@import "components/home";
+
+
+
+
+
+
+
+@import "components/product-page";
+
+
+
+
+
+
+
+.footer {
+  background-color: $footerBackgroundColor;
+  color: $textColorLight;
+  margin-top: rem(16);
+  padding: rem(24) 0;
+
+  @media (min-width: $mobile) {
+    margin-top: rem(48);
+    padding: rem(48) 0 rem(32);
+  }
+
+  // .footer__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(32);
+
+    @media (min-width: $mobile) {
+      flex-direction: row;
+    }
+  }
+  // .footer__group
+  &__group {
+    text-align: center;
+    // .footer__group_contacts
+    &_contacts {
+    }
+    // .footer__group_slogan
+    &_slogan {
+      display: none;
+
+      // @media (min-width: $pcSmall) {
+      //   display: inline;
+      //   max-width: rem(320);
+      //   text-align: left;
+      //   line-height: 1.25;
+      // }
+    }
+    // .footer__group_logo
+    &_logo {
+    }
+    // .footer__group_pages
+    &_pages {
+      &:not(:last-child) {
+        margin-bottom: rem(24);
+      }
+
+      @media (min-width: $mobileSmall) {
+        text-align: left;
+      }
+    }
+  }
+  // .footer__group-title
+  &__group-title {
+    font-size: rem(16);
+    font-weight: 700;
+    margin-bottom: rem(16);
+    line-height: 1.25;
+  }
+  // .footer__social-links-container
+  &__social-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(16);
+    margin-bottom: rem(16);
+  }
+  // .footer__social-link
+  &__social-link {
+  }
+  // .footer__numbers-container
+  &__numbers-container {
+  }
+  // .footer__phone-number
+  &__phone-number {
+  }
+  // .footer__slogan-text
+  &__slogan-text {
+  }
+  // .footer__logo-img
+  &__logo-img {
+  }
+  // .footer__pages-container
+  &__pages-container {
+    @media (min-width: $mobileSmall) {
+      display: flex;
+      justify-content: center;
+      gap: rem(24);
+    }
+  }
+  // .footer__group-list
+  &__group-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(16);
+
+    @media (min-width: $mobileSmall) {
+      align-items: flex-start;
+    }
+  }
+  // .footer__group-list-item
+  &__group-list-item {
+  }
+  // .footer__group-list-link
+  &__group-list-link {
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

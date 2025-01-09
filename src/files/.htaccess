@@ -1,0 +1,18 @@
+# Забороняє індексацію директорій
+Options -Indexes
+
+# Увімкнення модуля переписування URL
+RewriteEngine On
+
+# Встановлення базового шляху
+RewriteBase /
+
+# Додавання .html для запитуваних URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*?)/?$ $1.html [L]
+
+# Якщо файл не існує, відкривати index.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [L]
