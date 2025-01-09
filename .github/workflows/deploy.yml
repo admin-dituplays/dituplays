@@ -1,0 +1,38 @@
+name: Deploy to HostPro
+
+on:
+  push:
+    branches:
+      - main  # Виконувати дію при пуші до основної гілки
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Крок 1: Клонувати код з репозиторію
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Крок 2: Встановити Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Замініть на вашу версію Node.js
+
+      # Крок 3: Встановити залежності
+      - name: Install dependencies
+        run: npm install
+
+      # Крок 4: Виконати збірку (gulp build)
+      - name: Build project
+        run: npm run build
+
+      # Крок 5: Завантажити готові файли на FTP (HostPro)
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.5.0
+        with:
+          ftp-server: ftp://194.28.86.125
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist
