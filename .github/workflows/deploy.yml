@@ -30,7 +30,7 @@ jobs:
 
       # Крок 5: Завантажити готові файли на FTP (HostPro)
       - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.5.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           ftp-server: ftp://194.28.86.125
           ftp-username: ${{ secrets.FTP_USERNAME }}
