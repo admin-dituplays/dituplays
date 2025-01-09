@@ -35,4 +35,4 @@ jobs:
           server: ftp://194.28.86.125
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist
+          local-dir: dist/
