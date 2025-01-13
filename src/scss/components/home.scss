@@ -90,6 +90,7 @@
 
     @media (any-hover: hover) {
       &:hover {
+        min-width: 100%;
         transform: scale(1.1);
         filter: brightness(0.9);
       }
