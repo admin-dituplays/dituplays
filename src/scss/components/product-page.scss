@@ -299,6 +299,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: rem(16);
     padding: rem(16);
     border-bottom: 2px solid $borderColor;
@@ -307,6 +308,7 @@
   &__price {
     font-size: rem(16);
     font-weight: 700;
+    // text-wrap: nowrap;
 
     @media screen and (min-width: $pcSmall) {
       font-size: rem(18);
@@ -322,6 +324,7 @@
     padding: rem(8) rem(16);
     border-radius: rem(24);
     text-align: center;
+    margin-left: auto;
   }
   // .main-info__phone-btn-text
   &__phone-btn-text {
