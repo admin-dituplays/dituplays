@@ -7,8 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $dituMainGradient;
+  background: $dituTopHeaderColor;
   text-align: center;
+  // color: $textColorLight;
 
   @media (min-width: $mobile) {
     min-height: rem(38);
