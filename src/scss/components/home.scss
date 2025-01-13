@@ -55,36 +55,45 @@
   // .catalog-card__images-container
   &__images-container {
     width: 100%;
-    height: rem(180);
+    // height: rem(180);
+    aspect-ratio: 600 / 360;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $dituMainGradient;
+    // background: $dituMainGradient;
     border-top-left-radius: rem(12);
     border-top-right-radius: rem(12);
 
-    @media (min-width: $mobileSmall) and (max-width: em(600)) {
-      height: rem(240);
-    }
+    // @media (min-width: $mobileSmall) and (max-width: em(600)) {
+    //   height: rem(280);
+    // }
 
-    @media (min-width: em(800)) and (max-width: $pcSmall) {
-      height: rem(240);
-    }
+    // // @media (min-width: em(800)) and (max-width: $pcSmall) {
+    // //   height: rem(240);
+    // // }
 
-    @media (min-width: em(1400)) {
-      height: rem(280);
-    }
+    // @media (min-width: em(1400)) {
+    //   height: rem(280);
+    // }
 
-    @media (min-width: em(1600)) {
-      height: rem(340);
-    }
+    // @media (min-width: em(1600)) {
+    //   height: rem(340);
+    // }
   }
   // .catalog-card__image
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+        filter: brightness(0.9);
+      }
+    }
   }
   // .catalog-card__body
   &__body {
