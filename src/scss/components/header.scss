@@ -13,6 +13,7 @@
 
   @media (min-width: $mobile) {
     min-height: rem(38);
+    // margin-top: rem(38);
   }
   
   // .top-banner__text
@@ -31,7 +32,12 @@
   }
 }
 .header {
+  position: sticky;
+  top: 0;
+  // width: 100%;
+  z-index: 100;
   background-color: $headerBackgroundColor;
+
   // .header__container
   &__container {
     display: flex;
@@ -142,6 +148,7 @@
   &__branding-container {
     flex: auto;
     display: flex;
+    user-select: none;
     justify-content: flex-start;
     align-items: center;
     padding: rem(12) rem(4);
@@ -175,10 +182,10 @@
 
   // .header__actions-container
   &__actions-container {
+    padding: rem(12);
   }
   // .header__contacts-btn
   &__contacts-btn {
-    padding: rem(12);
     color: $textColorLight;
     font-size: rem(12);
     font-weight: 600;
