@@ -12,15 +12,20 @@ RewriteBase /
 RewriteCond %{HTTP_HOST} ^dituplays\.com [NC]
 RewriteRule ^(.*)$ https://www.dituplays.com/$1 [L,R=301]
 
-# Винятки для статичних файлів (щоб стилі, JS, зображення завантажувались коректно)
-RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|otf|eot|ico)$ [NC]
-RewriteRule ^ - [L]
-
-# Переадресація зі старого сайту на новий
+# Переадресація зі старого сайту на новий (перед усіма іншими правилами)
 Redirect 301 /product-page/%D0%B2%D1%96%D0%B3%D0%B2%D0%B0%D0%BC-1 /vigvam-dityachyj-majdanchyk/
 Redirect 301 /product-page/%D0%B2%D1%96%D0%B3%D0%B2%D0%B0%D0%BC-%D0%BC%D1%96%D0%BD%D1%96 /vigvam-mini/
 Redirect 301 /product-page/product-page/вігвам-міні /vigvam-mini/
 Redirect 301 /product-page/%D0%BA%D0%B0%D0%B7%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9-%D0%B1%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D1%87%D0%BE%D0%BA /kazkovyy-budynochok/
+
+# Винятки для статичних файлів (щоб стилі, JS, зображення завантажувались коректно)
+RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|otf|ico)$ [NC]
+RewriteRule ^ - [L]
+
+# Виправлення шляху до файлів, якщо вони запитуються з підкаталогів
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^(.*)/css/(.*)$
+RewriteRule ^.*$ /css/$2 [L]
 
 # Додавання .html для запитуваних URL
 RewriteCond %{REQUEST_FILENAME} !-d
