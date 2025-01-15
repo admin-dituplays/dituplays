@@ -7,12 +7,24 @@ RewriteEngine On
 # Встановлення базового шляху
 RewriteBase /
 
+# Основна версія сайту - www.dituplays.com
+# Переадресація з версії без www на сторінки з www для уникнення дублювання
+RewriteCond %{HTTP_HOST} ^dituplays\.com [NC]
+RewriteRule ^(.*)$ https://www.dituplays.com/$1 [L,R=301]
+
 # Додавання .html для запитуваних URL
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*?)/?$ $1.html [L]
 
+# Винятки для статичних файлів (CSS, JS, зображення тощо)
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|otf|eot|ico)$ [NC]
+
 # Якщо файл не існує, відкривати index.html
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [L]
+
+# Переадресація зі старого сайту на новий
+Redirect 301 /product-page/%D0%B2%D1%96%D0%B3%D0%B2%D0%B0%D0%BC-1 /vigvam-dityachyj-majdanchyk/
+Redirect 301 /product-page/%D0%B2%D1%96%D0%B3%D0%B2%D0%B0%D0%BC-%D0%BC%D1%96%D0%BD%D1%96 /vigvam-mini/
