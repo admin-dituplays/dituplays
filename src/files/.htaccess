@@ -25,12 +25,11 @@ RewriteRule ^vigvam-mini/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maid
 RewriteRule ^sportyvno-igrovyy-kompleks-nindzya/?$ https://www.dituplays.com/sportyvno-ihrovyi-kompleks-nindzia/ [R=301,L]
 
 # Нові переадресації
-RewriteRule ^product-page/%D0%BA%D0%B0%D0%B7%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9-%D0%B1%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D1%87%D0%BE%D0%BA/?$ https://www.dituplays.com/budynochok-dlia-ditei-kazkovyi/ [R=301,L]
 RewriteRule ^product-page/казковий-будиночок/?$ https://www.dituplays.com/budynochok-dlia-ditei-kazkovyi/ [R=301,L]
-RewriteRule ^product-page/%D1%96%D0%B3%D1%80%D0%BE%D0%B2%D0%B8%D0%B9-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81-%D1%96%D0%BD%D0%B4%D0%B8%D0%B2%D1%96%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9/?$ https://www.dituplays.com/dytiachyi-budynochok-sportyvnyi/ [R=301,L]
-RewriteRule ^product-page/%D0%B2%D1%96%D0%B3%D0%B2%D0%B0%D0%BC-%D0%BC%D1%96%D0%BD%D1%96/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maidanchyk/ [R=301,L]
-RewriteRule ^product-page/%D0%B2%D1%96%D0%B3%D0%B2%D0%B0%D0%BC-%D0%BC%D0%B0%D1%85%D1%96/?$ https://www.dituplays.com/vigvam-dytiachyi-maidanchyk/ [R=301,L]
-RewriteRule ^product-page/%D0%B2%D1%96%D0%B3%D0%B2%D0%B0%D0%BC-1/?$ https://www.dituplays.com/vigvam-dytiachyi-maidanchyk/ [R=301,L]
+RewriteRule ^product-page/ігровий-комплекс-індивідуальний/?$ https://www.dituplays.com/dytiachyi-budynochok-sportyvnyi/ [R=301,L]
+RewriteRule ^product-page/вігвам-міні/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maidanchyk/ [R=301,L]
+RewriteRule ^product-page/product-page/вігвам-махі/ [R=301,L]
+RewriteRule ^product-page/вігвам-1/?$ https://www.dituplays.com/vigvam-dytiachyi-maidanchyk/ [R=301,L]
 RewriteRule ^contact/?$ https://www.dituplays.com/komanda-ditu-plays/ [R=301,L]
 RewriteRule ^about/?$ https://www.dituplays.com/komanda-ditu-plays/ [R=301,L]
 
