@@ -134,8 +134,8 @@
   }
   // .menu__link
   &__link {
-    display: flex;
-    align-items: center;
+    display: inline;
+    // align-items: center;
     gap: rem(8);
     font-size: rem(16);
     font-weight: 400;
@@ -169,7 +169,7 @@
   }
   // .menu__numbers-container
   &__numbers-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: rem(16);
   }
