@@ -256,6 +256,8 @@
   }
   // .info-block__kit-container
   &__kit-container {
+    width: 50%;
+    flex: 0 1 50%;
   }
   // .info-block__kit-title
   &__kit-title {
@@ -271,6 +273,8 @@
   }
   // .info-block__size-container
   &__size-container {
+    width: 50%;
+    flex: 0 1 50%;
     margin-top: rem(16);
 
     @media screen and (min-width: $mobile) {
