@@ -2,167 +2,161 @@
 @import "utils/mixins";
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:regular,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:regular,500,600,700,800&display=swap');
 
 // Variables
 $fontFamily: "Nunito", sans-serif;
-// $fontFamilyMinor: "Plus Jakarta Sans", sans-serif;
+$fontFamilyPrice: "Plus Jakarta Sans", sans-serif;
 $fontSize: rem(14);
 
-//TODO: Colors
-// $wrapperBackground: #fff;
 
-$dituMainGradient: linear-gradient(to bottom right, #1BC1B2, #66E2A3, #B2D763);
+
+//TODO: Colors
+
+
+
+
+
 
 $dituTopHeaderColor: #66E2A3;
-
-
 $bodyBackgroundColor: #FFFFFF;
-
 $headerBackgroundColor: #333333;
-
-
 $headerActionsHover: #707070;
-
 $footerBackgroundColor: #333333;
-
-
-$borderColor: #DFDFDF;
-
 
 $buttonsBackgroundColor: #7BB57C;
 $buttonsBackgroundHover: #4C7A4D;
-
-
 $mainLinkColor: #3B95C4;
 
 // $backgroundColorDark: #2D3250;
 // $backgroundColorAlt: #7077A1;
 // $accentColor: #F0FF00;
-
 // $bordersColor: #B6BBC4;
-
 // $accentColorHover: #d1db4b;
-
 // $textNotesColor: #53667C;
 // $errorColor: #f05050;
 
 
-// Text Colors
-$textColorMain: #333333;
-$textColorLight: #F3F3F3; 
-$textColorHint: #999999;
 
- 
+
+$borderColor: #DFDFDF;
+$iconsColor: #515151;
+
+
+
+$brandColorBlack: #333333;
+$brandColorBlackAlt: #515151;
+$brandColorGreen: #33B249;
+$brandColorGreenAlt: #51D067;
+$brandColorBlue: #4681F4;
+$brandColorBlueAlt: #649FFF;
+$brandColorRed: #ED505E;
+$brandColorRedAlt: #FF6E7C;
 
 
 // Slider
-$sliderElementsColorLight: #F3F3F3; 
-$sliderElementsColorDark: #333333; 
+$sliderElementsColor: #F3F3F3; 
+
+
+
+
+
+$actionCallButtonColor: $brandColorGreen;
+$actionCallButtonColorHover: $brandColorGreenAlt;
+$actionTelegramButtonColor: $brandColorBlue;
+$actionTelegramButtonColorHover: $brandColorBlueAlt;
+
+
+
+
+
+// Text Colors
+$textColorMain: $brandColorBlack;
+$textColorLight: #F3F3F3; 
+$textColorInfo: $brandColorGreen;
+$textColorSecondary: #999999;
+
+
+$textColorHint: #999999;
+
+$linkColorMain: $brandColorBlue;
+$linkColorAlt: $brandColorRed;
+
+
+
 
 
 // Containers
-$minWidth: 320;
-$maxWidth: 1920;
-$maxWidthContainer: 1888;
+$minWidth: 375;
+$maxWidth: 1440;
+$maxWidthContainer: 1408;
 $containerPadding: 32;
 
 // First breakpoint
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Breakpoints
-$pc: em($containerWidth);
-$pcSmall: em(1023.98);
-$tablet: em(991.98); // Tablets
-$mobile: em(767.98); // Phone L
-$mobileSmall: em(424.98); // Phone S
-// $mobileSmall: em(479.98); // Phone S from FFL
+// $pc: em($containerWidth);
+// $pcSmall: em(1023.98);
+// $tablet: em(991.98); // Tablets
+// $mobile: em(767.98); // Phone L
+// $mobileSmall: em(424.98); // Phone S
+$mobile: em(479.98);
+$tabletSmall: em(575.98);
+$tablet: em(767.98);
+$tabletLarge: em(991.98);
+$desktop: em(1023.98);
+
 
 @import "utils/null";
-
-body {
-  background-color: $bodyBackgroundColor;
-	// scrollbar-gutter: stable;
-	// Скролл заблоковано
-	.lock & {
-		overflow: hidden;
-		touch-action: none;
-		overscroll-behavior: none;
-	}
-	.loaded & {
-	}
-}
+@import "assets/icons";
+@import "assets/colorSwatch";
 
 .wrapper {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-  // background-color: $backgroundColor;
+  background-color: $bodyBackgroundColor;
+
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
+
 	// sticky footer
 	> main {
 		flex: 1 1 auto;
 	}
 }
 
-// Smooth
 [class*="__container"] {
-  @if ($maxWidthContainer>0) {
-    max-width: rem($containerWidth);
-    margin: 0 auto;
-  }
-  @if ($containerPadding>0) {
-    @if ($maxWidthContainer>0) {
-      padding: 0 rem(math.div($containerPadding, 2));
-    } @else {
-      @include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
-      @include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
-    }
+  max-width: rem($containerWidth);
+  margin: 0 auto;
+  padding: 0 rem(math.div($containerPadding, 4));
+
+  @media (min-width: $tablet) {
+    padding: 0 rem(math.div($containerPadding, 2));
   }
 }
 
-// With Breakpoits
-// [class*="__container"] {
-//   margin: 0 auto;
-//   width: 100%;
-//   padding: 0 rem(math.div($containerPadding, 2));
 
-//   @media (min-width: $mobile) {
-//     width: rem($containerWidth);
-//   }
-//   @media (max-width: $tablet) {
-//     max-width: rem(750);
-//   }
-// }
-
-@import "components/header";
 
 
 
 
 
 
+@import "components/header";
 
 
 @import "components/nav";
 
 
-
-
-
-
-
 @import "components/home";
 
 
-
-
-
-
-
 @import "components/product-page";
+
 
 
 
@@ -176,7 +170,7 @@ body {
   margin-top: rem(16);
   padding: rem(24) 0;
 
-  @media (min-width: $mobile) {
+  @media (min-width: $tablet) {
     margin-top: rem(48);
     padding: rem(48) 0 rem(32);
   }
@@ -188,7 +182,7 @@ body {
     justify-content: space-between;
     gap: rem(32);
 
-    @media (min-width: $mobile) {
+    @media (min-width: $tablet) {
       flex-direction: row;
     }
   }
@@ -219,7 +213,7 @@ body {
         margin-bottom: rem(24);
       }
 
-      @media (min-width: $mobileSmall) {
+      @media (min-width: $mobile) {
         text-align: left;
       }
     }
@@ -256,7 +250,7 @@ body {
   }
   // .footer__pages-container
   &__pages-container {
-    @media (min-width: $mobileSmall) {
+    @media (min-width: $mobile) {
       display: flex;
       justify-content: center;
       gap: rem(24);
@@ -270,7 +264,7 @@ body {
     align-items: center;
     gap: rem(16);
 
-    @media (min-width: $mobileSmall) {
+    @media (min-width: $mobile) {
       align-items: flex-start;
     }
   }

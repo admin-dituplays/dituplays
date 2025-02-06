@@ -184,7 +184,7 @@
 }
 
 /* Темний фон */
-body.no-scroll::before {
+body.lock::before {
   content: '';
   position: fixed;
   top: 0;
@@ -193,11 +193,14 @@ body.no-scroll::before {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 990;
+  scrollbar-gutter: stable;
 }
 
 /* Заборона скролу */
-body.no-scroll {
+body.lock {
   overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
 }
 
 // ===============================================================================

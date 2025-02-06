@@ -19,14 +19,25 @@ RewriteRule ^(.*?)/?$ $1.html [L]
 
 # Переадресації для змінених URL
 RewriteRule ^vigvam-dityachyj-majdanchyk/?$ https://www.dituplays.com/vigvam-dytiachyi-maidanchyk/ [R=301,L]
-RewriteRule ^igrovyy-sportyvnyy-budynochok/?$ https://www.dituplays.com/dytiachyi-budynochok-sportyvnyi/ [R=301,L]
-RewriteRule ^kazkovyy-budynochok/?$ https://www.dituplays.com/budynochok-dlia-ditei-kazkovyi/ [R=301,L]
-RewriteRule ^vigvam-mini/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maidanchyk/ [R=301,L]
-RewriteRule ^sportyvno-igrovyy-kompleks-nindzya/?$ https://www.dituplays.com/sportyvno-ihrovyi-kompleks-nindzia/ [R=301,L]
+RewriteRule ^product-page/ігровий-комплекс-індивідуальний/?$ https://www.dituplays.com/budynochok-sportyvnyi/ [R=301,L]
+RewriteRule ^igrovyy-sportyvnyy-budynochok/?$ https://www.dituplays.com/budynochok-sportyvnyi/ [R=301,L]
+RewriteRule ^dytiachyi-budynochok-sportyvnyi/?$ https://www.dituplays.com/budynochok-sportyvnyi/ [R=301,L]
+RewriteRule ^kazkovyy-budynochok/?$ https://www.dituplays.com/kazkovyi-budynochok/ [R=301,L]
+RewriteRule ^budynochok-dlia-ditei-kazkovyi/?$ https://www.dituplays.com/kazkovyi-budynochok/ [R=301,L]
+RewriteRule ^product-page/казковий-будиночок/?$ https://www.dituplays.com/kazkovyi-budynochok/ [R=301,L]
+
+# Ніндзя
+RewriteRule ^sportyvno-igrovyy-kompleks-nindzya/?$ https://www.dituplays.com/nindzia-sportyvno-ihrovyi-kompleks/ [R=301,L]
+RewriteRule ^sportyvno-ihrovyi-kompleks-nindzia/?$ https://www.dituplays.com/nindzia-sportyvno-ihrovyi-kompleks/ [R=301,L]
+
+# Павук
+RewriteRule ^dytiachyi-maidanchyk-pavuk/?$ https://www.dituplays.com/pavuk-dytiachyi-maidanchyk/ [R=301,L]
+
+# Машинка
+RewriteRule ^mashynka-dytiachyi-maidanchyk/?$ https://www.dituplays.com/mashynka/ [R=301,L]
 
 # Нові переадресації
-RewriteRule ^product-page/казковий-будиночок/?$ https://www.dituplays.com/budynochok-dlia-ditei-kazkovyi/ [R=301,L]
-RewriteRule ^product-page/ігровий-комплекс-індивідуальний/?$ https://www.dituplays.com/dytiachyi-budynochok-sportyvnyi/ [R=301,L]
+RewriteRule ^vigvam-mini/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maidanchyk/ [R=301,L]
 RewriteRule ^product-page/вігвам-міні/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maidanchyk/ [R=301,L]
 RewriteRule ^product-page/product-page/вігвам-махі/ [R=301,L]
 RewriteRule ^product-page/вігвам-1/?$ https://www.dituplays.com/vigvam-dytiachyi-maidanchyk/ [R=301,L]
