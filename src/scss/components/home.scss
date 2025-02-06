@@ -18,7 +18,7 @@
       font-size: rem(24);
     }
 
-    @media (min-width: $pcSmall) {
+    @media (min-width: $desktop) {
       margin: rem(48) 0 rem(24);
       font-size: rem(24);
     }
@@ -121,7 +121,7 @@
   &__description {
     display: none;
 
-    @media (min-width: $pcSmall) {
+    @media (min-width: $desktop) {
       display: block;
       margin-top: rem(16);
       color: $textColorHint;  

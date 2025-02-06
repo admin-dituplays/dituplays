@@ -1,0 +1,94 @@
+/* Default state for swatch items */
+[data-swatch-item] {
+  opacity: 0;
+  visibility: hidden;
+  // transform: scale(0.95);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  // transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Active state for swatch items */
+.swatch-item-active {
+  opacity: 1;
+  visibility: visible;
+  // transform: scale(1);
+}
+
+
+// Product colors
+$swatchGrey: #515151;
+$swatchCream: #FFC26F;
+$swatchBlue: #4681F4;
+$swatchYellow: #FFBD03;
+
+// Grey button 
+[data-swatch-button="grey"].product-page__color-swatch-button {
+  background-color: $swatchGrey;
+  outline: 2px solid transparent;
+
+  // Active button styling
+  &.swatch-button-active {
+    outline-color: $swatchGrey;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      outline-color: $swatchGrey;
+    }
+  }
+}
+
+// Cream button 
+[data-swatch-button="cream"].product-page__color-swatch-button {
+  background-color: $swatchCream;
+  outline: 2px solid transparent;
+
+  // Active button styling
+  &.swatch-button-active {
+    outline-color: $swatchCream;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      outline-color: $swatchCream;
+    }
+  }
+}
+
+// Blue button 
+[data-swatch-button="blue"].product-page__color-swatch-button {
+  background-color: $swatchBlue;
+  outline: 2px solid transparent;
+
+  // Active button styling
+  &.swatch-button-active {
+    outline-color: $swatchBlue;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      outline-color: $swatchBlue;
+    }
+  }
+}
+
+// Yellow button 
+[data-swatch-button="yellow"].product-page__color-swatch-button {
+  background-color: $swatchYellow;
+  outline: 2px solid transparent;
+
+  // Active button styling
+  &.swatch-button-active {
+    outline-color: $swatchYellow;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      outline-color: $swatchYellow;
+    }
+  }
+}
