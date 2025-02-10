@@ -456,11 +456,20 @@
   // .product-details__group-columns
   &__group-columns {
     display: flex;
-    gap: rem(16);
+    gap: rem(8);
     flex-wrap: wrap;
 
     &:not(:last-child) {
       margin-bottom: rem(8);
+    }
+
+    @media screen and (min-width: $tablet) {
+      gap: rem(16);
+    }
+
+    // .product-details__group-columns_gap-medium
+    &_gap-medium {
+      gap: rem(16);
     }
   }
   // .product-details__group-column
