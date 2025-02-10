@@ -59,6 +59,15 @@ $sliderElementsColor: #F3F3F3;
 
 
 
+// Modal Windows
+$modalBackgroundColor: #EBEAED;
+$modalBorderColor: $borderColor;
+$modalButtonColor: $brandColorGreen;
+$modalButtonColorHover: $brandColorGreenAlt;
+
+
+
+
 
 
 $actionCallButtonColor: $brandColorGreen;
@@ -138,6 +147,10 @@ $desktop: em(1023.98);
     padding: 0 rem(math.div($containerPadding, 2));
   }
 }
+
+
+
+
 
 
 
@@ -280,3 +293,5 @@ $desktop: em(1023.98);
     }
   }
 }
+
+@import "components/cookie-banner";

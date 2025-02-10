@@ -8,6 +8,10 @@ class ColorSwatch {
   }
 
   init() {
+    if (this.colorButtons.length === 0) {
+      return;
+    }
+
     // Set the first option as active by default
     const firstButton = this.colorButtons[0];
     const firstOption = firstButton.getAttribute('data-swatch-button');
