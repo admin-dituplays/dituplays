@@ -1,17 +1,17 @@
 import * as functions from './modules/functions.js';
-
-// WebP Checker
-functions.isWebp();
-
-// Smooth Scroll
-functions.smoothScroll();
-
-
 import ColorSwatch from './plugins/colorSwatch.js';
+import { convertCurrency } from './plugins/currencyConverter.js';
 
-// Initialize the plugin for all containers
 document.addEventListener('DOMContentLoaded', () => {
+  // WebP Checker
+  functions.isWebp();
+
+  // Smooth Scroll
+  functions.smoothScroll();
+
   new ColorSwatch();
+
+  convertCurrency();
 });
 
 
