@@ -190,7 +190,8 @@ $desktop: em(1023.98);
   background-color: $footerBackgroundColor;
   color: $textColorLight;
   margin-top: rem(16);
-  padding: rem(24) 0;
+  // padding: rem(24) 0;
+  padding: rem(24) 0 rem(48) 0;
 
   @media (min-width: $tablet) {
     margin-top: rem(48);
