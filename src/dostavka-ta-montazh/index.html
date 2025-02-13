@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  @@include('../html/head.html', {
+    "title": "Доставка та монтаж дитячих майданчиків від DiTu_plays",
+    "description": "DiTu_plays пропонує зручні варіанти доставки та монтажу дерев'яних дитячих майданчиків по всій Україні. Обирайте професійне встановлення, перевізників або самостійний монтаж з детальними інструкціями",
+    "keywords": "доставка дитячих майданчиків, монтаж дитячого майданчика, установка ігрового комплексу, купити майданчик з монтажем, DiTu plays доставка, встановлення дитячих майданчиків Україна",
+    "canonical": "https://www.dituplays.com/dostavka-ta-montazh/"
+  })
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../css/style.min.css" />
+
+  <meta property="og:title" content="Доставка та монтаж дитячих майданчиків від DiTu_plays">
+  <meta property="og:description" content="DiTu_plays пропонує зручні варіанти доставки та монтажу дерев'яних дитячих майданчиків по всій Україні. Обирайте професійне встановлення, перевізників або самостійний монтаж з детальними інструкціями">
+  <meta property="og:image" content="https://wwww.dituplays.com/img/content-page/delivery/delivery.png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="360">
+  <meta property="og:url" content="https://www.dituplays.com/dostavka-ta-montazh/">
+  <meta property="og:type" content="website">
+  
+  @@include('../html/head-scripts.html', {})
+</head>
+
+<body>
+  <div class="wrapper">
+    @@include('../html/header.html', {
+      "header-logo-link": "../@img/ditu-plays-logo.png",
+      "nav-logo-link": "../@img/ditu-plays-logo.png",
+    })
+    
+    <main class="main">
+      <div class="content-page">
+        <section class="content-page__container">
+          <div class="content-page__group">
+            <div class="content-page__video-container">
+              <video autoplay loop muted playsinline poster="../@img/content-page/delivery/delivery.png" class="content-page__video">
+                <source src="../video/content-page/delivery/delivery.webm" type="video/mp4">
+                <source src="../video/content-page/delivery/delivery.mp4" type="video/webm">
+                Ваш браузер не підтримує відтворення відео.
+              </video>
+            </div>
+            <h1 class="content-page__title content-page__title_color-green">Варіанти доставки та монтажу</h1>
+            <p class="content-page__text text text_center">Ми прагнемо зробити процес отримання вашого дитячого майданчика максимально зручним та безтурботним!</p>
+          </div>
+
+          <div class="content-page__group">
+            <ul class="content-page__list list list_default">
+              <li class="list__item">
+                <p class="list__item-text text"><span class="text__bold">Доставка та монтаж від DiTu_plays – </span>найпопулярніший вибір наших клієнтів! Ми працюємо по всій території України, забезпечуючи професійне встановлення майданчика. <span class="text__bold">Вартість послуги </span>складає 10-15% від вартості комплексу, а в окремих випадках може досягати 20%.</p>
+              </li>
+              <li class="list__item">
+                <p class="list__item-text text"><span class="text__bold">Доставка перевізниками – </span>якщо вам зручніше, ми можемо організувати транспортування вашого майданчика через перевізників.</p>
+              </li>
+              <li class="list__item">
+                <p class="list__item-text text"><span class="text__bold">Самостійний монтаж – </span>обирайте цей варіант, якщо бажаєте власноруч зібрати конструкцію. Ми надамо всі необхідні інструкції для легкого та зрозумілого процесу встановлення.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="content-page__group">
+            <p class="content-page__text text text_center">Обирайте варіант, який підходить саме вам, а про решту подбаємо ми! 💛</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  
+    @@include('../html/footer.html', {
+      "footer-logo-link": "../@img/ditu-plays-logo-light.png",
+    })
+  </div>
+</body>
+</html>
