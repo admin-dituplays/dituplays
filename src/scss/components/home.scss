@@ -1,6 +1,3 @@
-// ===============================================================================
-// CATALOG
-// ===============================================================================
 .main {
 }
 .catalog {
@@ -9,20 +6,13 @@
   }
   // .catalog__title
   &__title {
-    margin: rem(16) 0;
-    font-size: rem(18);
-    font-weight: 700;
-
-    @media (min-width: em(600)) {
-      margin: rem(24) 0 rem(16);
-      font-size: rem(24);
-    }
+    margin: rem(24) 0;
+    font-size: rem(20);
+    font-weight: 600;
 
     @media (min-width: $desktop) {
-      margin: rem(48) 0 rem(24);
-      font-size: rem(24);
+      margin: rem(24) 0 rem(16);
     }
-
   }
   // .catalog__items-container
   &__items-container {
@@ -43,44 +33,25 @@
   }
 }
 
-.catalog-card {
-  display: flex;
-  flex-direction: column; // Забезпечує послідовність блоків
-  height: 100%; // Дозволяє вирівнювати всі картки по висоті
-  // transition: transform 0.2s, box-shadow 0.2s;
-  &:hover {
-    // transform: translateY(-5px);
+.catalog {
+  // .catalog__item
+  &__item {
   }
-
-  // .catalog-card__images-container
-  &__images-container {
+}
+.catalog-card {
+  position: relative;
+  // .catalog-card__link
+  &__link {
+  }
+  // .catalog-card__image-container
+  &__image-container {
+    display: block;
     width: 100%;
-    // height: rem(180);
-    // aspect-ratio: 600 / 360;
-    aspect-ratio: 600 / 337.5;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // background: $dituMainGradient;
-    border-top-left-radius: rem(12);
-    border-top-right-radius: rem(12);
-
-    // @media (min-width: $mobileSmall) and (max-width: em(600)) {
-    //   height: rem(280);
-    // }
-
-    // // @media (min-width: em(800)) and (max-width: $pcSmall) {
-    // //   height: rem(240);
-    // // }
-
-    // @media (min-width: em(1400)) {
-    //   height: rem(280);
-    // }
-
-    // @media (min-width: em(1600)) {
-    //   height: rem(340);
-    // }
+    border-radius: rem(12);
+    margin-bottom: rem(12);
   }
   // .catalog-card__image
   &__image {
@@ -91,55 +62,62 @@
 
     @media (any-hover: hover) {
       &:hover {
-        min-width: 100%;
+        // min-width: 100%;
         transform: scale(1.1);
         filter: brightness(0.9);
       }
     }
   }
-  // .catalog-card__body
-  &__body {
-    padding: rem(16);
-    border: rem(2) solid $borderColor;
-    border-bottom-left-radius: rem(12);
-    border-bottom-right-radius: rem(12);
-    flex-grow: 1;
+  // .catalog-card__badge
+  &__badge {
+    position: absolute;
+    top: rem(12);
+    right: rem(12);
+    padding: rem(8) rem(24);
+    border-radius: rem(24);
+    font-size: rem(16);
+    font-weight: 700;
+    line-height: 1.4;
+    color: $textColorLight;
+
+    // .catalog-card__badge_price
+    &_price {
+      background-color: $cardBadgeColorPrice;
+    }
   }
   // .catalog-card__title
   &__title {
-    font-size: rem(18);
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: rem(4);
+    font-size: rem(20);
+    font-weight: 600;
+    line-height: 1.4;
+    color: $textColorMain;
   }
-  // .catalog-card__size
-  &__size {
-    font-size: rem(12);
-    color: $textColorHint;
+  // .catalog-card__price-container
+  &__price-container {
+    font-family: $fontFamilyPrice;
+    margin-top: rem(8);
   }
-  // .catalog-card__description
-  &__description {
-    display: none;
-
-    @media (min-width: $desktop) {
-      display: block;
-      margin-top: rem(16);
-      color: $textColorHint;  
-      font-weight: 400;
-      line-height: 1.25;
-    }
-  }
-  // .catalog-card__footer
-  &__footer {
-    margin-top: rem(16);
+  // .catalog-card__price-new
+  &__price-new {
+    display: block;
+    font-size: rem(14);
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: line-through;
+    color: $cardPriceColorNew;
   }
   // .catalog-card__price
   &__price {
-    font-size: rem(14);
-    font-weight: 700;
+    display: block;
+    font-size: rem(16);
+    font-weight: 800;
+    line-height: 1.4;
+    color: $cardPriceColorCurrent;
+
+    // .catalog-card__price_old
+    &_old {
+      color: $cardPriceColorOld;
+      font-weight: 700;
+    }
   }
 }
-
-// ===============================================================================
-// CATALOG
-// ===============================================================================

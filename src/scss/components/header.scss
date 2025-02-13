@@ -1,15 +1,12 @@
-// ===============================================================================
-// HEADER
-// ===============================================================================
-
 // Header
 .top-banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $dituTopHeaderColor;
+  // background: $dituTopHeaderColor;
+  background: linear-gradient(to bottom right, #CE334F, #FF5985);;
+  color: $textColorLight;
   text-align: center;
-  // color: $textColorLight;
 
   @media (min-width: $tablet) {
     min-height: rem(38);
@@ -18,7 +15,7 @@
   
   // .top-banner__text
   &__text {
-    font-weight: 700;
+    font-weight: 600;
     font-size: rem(12);
     margin: rem(6);
     line-height: normal;
