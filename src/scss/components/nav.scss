@@ -25,9 +25,9 @@
 
     overflow-y: auto;
     height: 100%;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
   }
   // .menu__header
   &__header {
@@ -193,14 +193,14 @@ body.lock::before {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 990;
-  scrollbar-gutter: stable;
+  // scrollbar-gutter: stable;
 }
 
 /* Заборона скролу */
 body.lock {
-  overflow: hidden;
-  touch-action: none;
-  overscroll-behavior: none;
+  // overflow: hidden;
+  // touch-action: none;
+  // overscroll-behavior: none;
 }
 
 // ===============================================================================
