@@ -52,7 +52,10 @@ $brandColorBlue: #4681F4;
 $brandColorBlueAlt: #649FFF;
 $brandColorRed: #ED505E;
 $brandColorRedAlt: #FF6E7C;
-
+$brandColorYellow: #FFBD03;
+$brandColorYellowAlt: #FFDD23;
+$brandColorPurple: #80669D;
+$brandColorPurpleAlt: #9E84BB;
 
 // Slider
 $sliderElementsColor: #F3F3F3; 
@@ -174,6 +177,7 @@ $desktop: em(1023.98);
 
 
 @import "components/product-page";
+@import "components/content-page";
 
 
 
