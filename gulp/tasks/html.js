@@ -7,6 +7,12 @@ import fs from "fs";
 
 export const html = () => {
   const contactInfo = JSON.parse(fs.readFileSync(app.path.src.contactInfo, 'utf-8'));
+  // const productsData = JSON.parse(fs.readFileSync(app.path.src.productsData, 'utf-8'));
+
+  // const templateLocals = {
+  //   contact: contactInfo,
+  //   products: productsData
+  // };
 
   return app.gulp.src(app.path.src.html)
     .pipe(fileInclude())
@@ -38,6 +44,7 @@ export const html = () => {
     )
     .pipe(posthtml([
       expressions({ locals: contactInfo })
+      // expressions({ locals: templateLocals })
     ]))
     .pipe(app.gulp.dest(app.path.build.html))
     .pipe(app.plugins.browsersync.stream());

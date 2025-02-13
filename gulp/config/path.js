@@ -24,6 +24,7 @@ export const path = {
     ],
     files: `${srcFolder}/files/**/*.*`,
     contactInfo: `${srcFolder}/contact-info.json`,
+    // productsData: `${srcFolder}/products.json`,
     svgIcons: `${srcFolder}/svgicons/*.svg`
   },
   watch: {
@@ -33,6 +34,7 @@ export const path = {
     html: `${srcFolder}/**/*.html`,
     files: `${srcFolder}/files/**/*.*`,
     contactInfo: `${srcFolder}/contact-info.json`
+    // productsData: `${srcFolder}/products.json`
   },
   clean: buildFolder,
   buildFolder: buildFolder,
