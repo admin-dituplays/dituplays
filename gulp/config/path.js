@@ -10,12 +10,14 @@ export const path = {
     js: `${buildFolder}/js/`,
     css: `${buildFolder}/css/`,
     images: `${buildFolder}/img/`,
+    videos: `${buildFolder}/video/`,
     html: `${buildFolder}/`,
     files: `${buildFolder}/`,
   },
   src: {
     js: `${srcFolder}/js/`,
-    images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,mp4}`,
+    images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+    videos: `${srcFolder}/video/**/*.{webm,mp4}`,
     svg: `${srcFolder}/img/**/*.svg`,
     scss: `${srcFolder}/scss/*.scss`,
     html: [
@@ -30,7 +32,8 @@ export const path = {
   watch: {
     js: `${srcFolder}/js/**/*.js`,
     scss: `${srcFolder}/scss/**/*.scss`,
-    images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,mp4}`,
+    images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
+    videos: `${srcFolder}/video/**/*.{webm,mp4}`,
     html: `${srcFolder}/**/*.html`,
     files: `${srcFolder}/files/**/*.*`,
     contactInfo: `${srcFolder}/contact-info.json`

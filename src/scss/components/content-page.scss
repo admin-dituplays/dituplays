@@ -42,6 +42,22 @@
       }
     }
   }
+
+  // .content-page__video-container
+  &__video-container {
+    display: block;
+    width: 100%;
+    // object-fit: cover;
+    // overflow: hidden;
+    margin-bottom: rem(12);
+  }
+  // .content-page__video
+  &__video {
+    width: 100%;
+    height: 100%;
+    border-radius: rem(12);
+  }
+
   // .content-page__title
   &__title {
     font-size: rem(20);
