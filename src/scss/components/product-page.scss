@@ -3,6 +3,10 @@
   &:not(:last-child) {
     margin-bottom: rem(8);
   }
+  // .text_center
+  &_center {
+    text-align: center;
+  } 
   // .text__bold
   &__bold {
     font-weight: 700;
