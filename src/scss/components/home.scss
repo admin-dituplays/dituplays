@@ -18,7 +18,8 @@
   &__items-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: rem(16);
+    column-gap: rem(16);
+    row-gap: rem(24);
 
     @media (min-width: em(600)) {
       grid-template-columns: repeat(2, 1fr);
