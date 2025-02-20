@@ -8,9 +8,6 @@ function formatUAHPrice(price) {
   return new Intl.NumberFormat('uk-UA').format(formattedPrice) + ' ₴';
 }
 
-
-
-
 async function getExchangeRate() {
   const cachedData = localStorage.getItem(CACHE_KEY);
 
