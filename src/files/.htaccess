@@ -36,6 +36,9 @@ RewriteRule ^dytiachyi-maidanchyk-pavuk/?$ https://www.dituplays.com/pavuk-dytia
 # Машинка
 RewriteRule ^mashynka-dytiachyi-maidanchyk/?$ https://www.dituplays.com/mashynka/ [R=301,L]
 
+# Корабель
+RewriteRule ^korablyk/?$ https://www.dituplays.com/korabel/ [R=301,L]
+
 # Нові переадресації
 RewriteRule ^vigvam-mini/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maidanchyk/ [R=301,L]
 RewriteRule ^product-page/вігвам-міні/?$ https://www.dituplays.com/vigvam-mini-dytiachyi-maidanchyk/ [R=301,L]
