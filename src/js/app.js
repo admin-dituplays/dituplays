@@ -18,7 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeProductGallery();
 });
 
+import { ProductCatalog } from './modules/catalog.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+  const catalog = new ProductCatalog('.catalog__items-container', '/data/products.json');
+  catalog.init();
+});
 
 // import { initCookieBanner } from './plugins/cookieBanner.js';
 
