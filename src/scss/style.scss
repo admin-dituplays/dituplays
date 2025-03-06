@@ -40,6 +40,7 @@ $mainLinkColor: #3B95C4;
 
 
 $borderColor: #DFDFDF;
+$borderHoverColor: #999999;
 $iconsColor: #515151;
 
 
@@ -60,7 +61,10 @@ $brandColorPurpleAlt: #9E84BB;
 // Slider
 $sliderElementsColor: #F3F3F3; 
 
-
+// Custom select element
+$selectOptionHoverColor: #DFDFDF;
+$selectBackgroundColor: $bodyBackgroundColor;
+$selectOptionActiveColor: #DFDFDF;
 
 // Modal Windows
 $modalBackgroundColor: #EBEAED;

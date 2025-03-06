@@ -4,7 +4,7 @@ export class ProductCatalog {
     this.dataUrl = dataUrl;
     this.products = [];
     this.originalOrder = [];
-    this.exchangeRate = 41; // Фіксований курс
+    this.exchangeRate = 41;
   }
 
   async init() {
@@ -29,16 +29,13 @@ export class ProductCatalog {
   }
 
   formatPrice(price, currency) {
-    // Перетворюємо число в рядок із роздільниками
     const formatted = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, currency === 'USD' ? ',' : ' ');
     return currency === 'USD' ? `$${formatted}` : `${formatted} ₴`;
   }
 
   getPriceInUAH(product) {
     const priceObj = product.price;
-    return priceObj.currency === 'USD'
-      ? priceObj.value * this.exchangeRate
-      : priceObj.value;
+    return priceObj.currency === 'USD' ? priceObj.value * this.exchangeRate : priceObj.value;
   }
 
   createProductCard(product) {
@@ -67,15 +64,14 @@ export class ProductCatalog {
   }
 
   renderProducts(productsToRender = this.products) {
-    this.container.innerHTML = productsToRender
-      .map(product => this.createProductCard(product))
-      .join('');
+    this.container.innerHTML = productsToRender.map(product => this.createProductCard(product)).join('');
   }
 
   sortProducts(order) {
-    this.products = [...this.originalOrder];
-    if (order && order !== 'default') {
-      this.products.sort((a, b) => {
+    if (order === 'default') {
+      this.products = [...this.originalOrder];
+    } else {
+      this.products = [...this.originalOrder].sort((a, b) => {
         const priceA = 'discountedValue' in a.price ? a.price.discountedValue : this.getPriceInUAH(a);
         const priceB = 'discountedValue' in b.price ? b.price.discountedValue : this.getPriceInUAH(b);
         return order === 'desc' ? priceB - priceA : priceA - priceB;
@@ -85,7 +81,7 @@ export class ProductCatalog {
   }
 
   saveSorting(order) {
-    const expiration = Date.now() + 30 * 60 * 1000; // 30 хвилин
+    const expiration = Date.now() + 30 * 60 * 1000;
     localStorage.setItem('catalogSort', JSON.stringify({
       order,
       expires: expiration
@@ -94,21 +90,19 @@ export class ProductCatalog {
 
   getSavedSorting() {
     const saved = localStorage.getItem('catalogSort');
-    if (!saved) return null;
+    if (!saved) return 'default';
 
     const { order, expires } = JSON.parse(saved);
     if (Date.now() > expires) {
       localStorage.removeItem('catalogSort');
-      return null;
+      return 'default';
     }
     return order;
   }
 
   applySavedSorting() {
     const savedOrder = this.getSavedSorting();
-    if (savedOrder) {
-      this.sortProducts(savedOrder);
-    }
+    this.sortProducts(savedOrder);
   }
 
   initSorting() {
@@ -128,23 +122,29 @@ export class ProductCatalog {
     }
 
     const savedOrder = this.getSavedSorting();
-    if (savedOrder) {
-      const savedOption = Array.from(optionItems).find(item => item.getAttribute('data-sort-order') === savedOrder);
-      if (savedOption) selected.textContent = savedOption.textContent;
-    }
+    const savedOption = Array.from(optionItems).find(
+      item => item.getAttribute('data-sort-order') === savedOrder
+    );
+    selected.textContent = savedOption ? savedOption.textContent : 'Популярні моделі';
 
     selected.addEventListener('click', () => {
-      options.classList.toggle('active');
+      sortControl.classList.toggle('active');
     });
 
     optionItems.forEach(item => {
       item.addEventListener('click', () => {
         const order = item.getAttribute('data-sort-order');
         selected.textContent = item.textContent;
-        options.classList.remove('active');
+        sortControl.classList.remove('active');
         this.sortProducts(order);
         this.saveSorting(order);
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!sortControl.contains(e.target)) {
+        sortControl.classList.remove('active');
+      }
     });
   }
 }

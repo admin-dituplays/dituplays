@@ -2,11 +2,12 @@
   <div class="catalog__container">
     <h2 class="catalog__title title">Каталог моделей</h2>
 
-    <div class="custom-select" data-sort-control>
-      <div class="custom-select__selected" data-sort-selected>Сортувати за ціною</div>
-      <ul class="custom-select__options" data-sort-options>
-        <li data-sort-order="asc">Від меншої до більшої</li>
-        <li data-sort-order="desc">Від більшої до меншої</li>
+    <div class="catalog__sort-select sort-select" data-sort-control>
+      <div class="sort-select__selected icon-arrow-down" data-sort-selected>Популярні моделі</div>
+      <ul class="sort-select__options" data-sort-options>
+        <li class="sort-select__option" data-sort-order="asc">Ціна за зростанням</li>
+        <li class="sort-select__option" data-sort-order="desc">Ціна за спаданням</li>
+        <li class="sort-select__option" data-sort-order="default">Популярні моделі</li>
       </ul>
     </div>
 
