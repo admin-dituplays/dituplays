@@ -38,6 +38,11 @@
   // .catalog__item
   &__item {
   }
+  // .catalog__sort-select
+  &__sort-select {
+    margin-left: auto;
+    margin-bottom: rem(16);
+  }
 }
 .catalog-card {
   position: relative;
@@ -119,6 +124,69 @@
     &_old {
       color: $cardPriceColorOld;
       font-weight: 700;
+    }
+  }
+}
+
+
+.sort-select {
+  position: relative;
+  width: max-content;
+  min-width: rem(210);
+
+  &.active .sort-select__options {
+    display: block;
+    margin-top: rem(4);
+    background-color: $selectBackgroundColor;
+    border: rem(2) solid $borderColor;
+    border-radius: rem(8);
+    box-shadow: 0 rem(15) rem(40) 0 rgba(0, 0, 0, 0.17);
+    overflow: hidden;
+  }
+
+  &.active .icon-arrow-down::before {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  // .sort-select__selected
+  &__selected {
+    padding: rem(8) rem(42) rem(8) rem(16);
+    border: rem(2) solid $borderColor;
+    border-radius: rem(8);
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: $borderHoverColor;
+    }
+  }
+
+  // .sort-select__options
+  &__options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+  }
+
+  // .sort-select__option
+  &__option {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: rem(6) rem(16);
+
+    &:first-child {
+      padding-top: rem(8);
+    }
+    &:last-child {
+      padding-bottom: rem(8);
+    }
+    &:hover {
+      background-color: $selectOptionHoverColor;
     }
   }
 }

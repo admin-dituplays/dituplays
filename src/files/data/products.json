@@ -1,0 +1,162 @@
+[
+  {
+    "id": "vigvam-dytiachyi-maidanchyk",
+    "title": "Вігвам",
+    "image": "/img/catalog/vigvam-dytiachyi-maidanchyk.jpg",
+    "alt": "Дитячий майданчик Вігвам для ігор на відкритому повітрі",
+    "price": {
+      "value": 63300,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "budynochok-sportyvnyi",
+    "title": "Будиночок Спортивний",
+    "image": "/img/catalog/budynochok-sportyvnyi.jpg",
+    "alt": "Спортивний будиночок для дитячого майданчика",
+    "price": {
+      "value": 197400,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "kazkovyi-budynochok",
+    "title": "Будиночок Казковий",
+    "image": "/img/catalog/kazkovyi-budynochok-dlia-ditei.jpg",
+    "alt": "Казковий будиночок для дитячого майданчика",
+    "price": {
+      "value": 100300,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "budynochok-na-derevi",
+    "title": "Будиночок на дереві",
+    "image": "/img/catalog/budynochok-na-derevi.jpg",
+    "alt": "Будиночок на дереві для дитячого майданчика",
+    "price": {
+      "value": 24150,
+      "currency": "USD"
+    }
+  },
+  {
+    "id": "zatyshnyi-budynochok",
+    "title": "Будиночок Затишний",
+    "image": "/img/catalog/zatyshnyi-budynochok.jpg",
+    "alt": "Будиночок Затишний - дитячий майданчик від DiTu plays",
+    "price": {
+      "value": 350000,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "khyzha-pryhod",
+    "title": "Хижа Пригод",
+    "image": "/img/catalog/khyzha-pryhod-ditu-plays.jpg",
+    "alt": "Хижа Пригод - дитячий майданчик від DiTu plays",
+    "price": {
+      "value": 570000,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "korabel",
+    "title": "Корабель",
+    "image": "/img/catalog/korabel-ditu-plays.jpg",
+    "alt": "Корабель - дитячий майданчик від DiTu plays",
+    "price": {
+      "value": 29000,
+      "currency": "USD"
+    }
+  },
+  {
+    "id": "shale-dytiachyi-maidanchyk",
+    "title": "Шале",
+    "image": "/img/catalog/shale-ditu-plays.jpg",
+    "alt": "Шале - дитячий майданчик від DiTu plays",
+    "price": {
+      "value": 260000,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "budynochok-ihrovyi",
+    "title": "Будиночок Ігровий",
+    "image": "/img/catalog/budynochok-ihrovyi.jpg",
+    "alt": "Будиночок Ігровий - дитячий майданчик від DiTu plays",
+    "price": {
+      "value": 162700,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "budynochok-z-dubamy",
+    "title": "Будиночок з дубами",
+    "image": "/img/catalog/budynochok-z-dubamy.jpg",
+    "alt": "Будиночок з дубами - дитячий майданчик від DiTu plays",
+    "price": {
+      "value": 215700,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "pavuk-dytiachyi-maidanchyk",
+    "title": "Павук",
+    "image": "/img/catalog/pavuk-dytiachyi-maidanchyk.jpg",
+    "alt": "Дитячий майданчик у вигляді Павука від DiTu plays",
+    "price": {
+      "value": 255000,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "derevne-misto",
+    "title": "Деревне Місто",
+    "image": "/img/catalog/derevne-misto-ditu-plays.jpg",
+    "alt": "Деревне Місто - дитячий комплекс будиночків від DiTu plays",
+    "price": {
+      "value": 450000,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "vigvam-mini-dytiachyi-maidanchyk",
+    "title": "Вігвам міні",
+    "image": "/img/catalog/vigvam-mini-dytiachyi-maidanchyk.jpg",
+    "alt": "Вігвам Міні - дитячий майданчик від DiTu plays",
+    "price": {
+      "value": 47300,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "nindzia-sportyvno-ihrovyi-kompleks",
+    "title": "Ніндзя",
+    "image": "/img/catalog/nindzia-sportyvno-ihrovyi-kompleks.jpg",
+    "alt": "Спортивний дитячий майданчик Ніндзя від DiTu plays",
+    "price": {
+      "value": 121100,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "kubyk-sportyvnyi-dytiachyi-maidanchyk",
+    "title": "Кубик",
+    "image": "/img/catalog/kubyk-sportyvnyi-dytiachyi-maidanchyk.jpg",
+    "alt": "Спортивний дитячий майданчик Кубик від DiTu plays",
+    "price": {
+      "value": 68000,
+      "currency": "UAH"
+    }
+  },
+  {
+    "id": "mashynka",
+    "title": "Машинка",
+    "image": "/img/catalog/mashynka.jpg",
+    "alt": "",
+    "price": {
+      "value": 77000,
+      "currency": "UAH"
+    }
+  }
+]
