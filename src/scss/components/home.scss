@@ -103,15 +103,6 @@
     font-family: $fontFamilyPrice;
     margin-top: rem(4);
   }
-  // .catalog-card__price-new
-  &__price-new {
-    display: block;
-    font-size: rem(14);
-    font-weight: 600;
-    line-height: 1.4;
-    text-decoration: line-through;
-    color: $cardPriceColorNew;
-  }
   // .catalog-card__price
   &__price {
     display: block;
@@ -122,8 +113,16 @@
 
     // .catalog-card__price_old
     &_old {
+      text-decoration: line-through;
       color: $cardPriceColorOld;
-      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    // .catalog-card__price_new
+    &_new {
+      line-height: 1.4;
+      color: $cardPriceColorNew;
+      font-weight: 600;
     }
   }
 }
@@ -140,7 +139,7 @@
     background-color: $selectBackgroundColor;
     border: rem(2) solid $borderColor;
     border-radius: rem(8);
-    box-shadow: 0 rem(6) rem(40) 0 rgba(0, 0, 0, 0.17);
+    box-shadow: 0 rem(15) rem(40) 0 rgba(0, 0, 0, 0.17);
     overflow: hidden;
   }
 

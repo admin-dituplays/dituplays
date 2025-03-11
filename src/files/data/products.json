@@ -6,7 +6,9 @@
     "alt": "Дитячий майданчик Вігвам для ігор на відкритому повітрі",
     "price": {
       "value": 63300,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -16,7 +18,9 @@
     "alt": "Спортивний будиночок для дитячого майданчика",
     "price": {
       "value": 197400,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -26,7 +30,9 @@
     "alt": "Казковий будиночок для дитячого майданчика",
     "price": {
       "value": 100300,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -36,7 +42,9 @@
     "alt": "Будиночок на дереві для дитячого майданчика",
     "price": {
       "value": 24150,
-      "currency": "USD"
+      "currency": "USD",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -46,7 +54,9 @@
     "alt": "Будиночок Затишний - дитячий майданчик від DiTu plays",
     "price": {
       "value": 350000,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -56,7 +66,9 @@
     "alt": "Хижа Пригод - дитячий майданчик від DiTu plays",
     "price": {
       "value": 570000,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -66,7 +78,9 @@
     "alt": "Корабель - дитячий майданчик від DiTu plays",
     "price": {
       "value": 29000,
-      "currency": "USD"
+      "currency": "USD",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -76,7 +90,9 @@
     "alt": "Шале - дитячий майданчик від DiTu plays",
     "price": {
       "value": 260000,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -86,7 +102,9 @@
     "alt": "Будиночок Ігровий - дитячий майданчик від DiTu plays",
     "price": {
       "value": 162700,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -96,7 +114,9 @@
     "alt": "Будиночок з дубами - дитячий майданчик від DiTu plays",
     "price": {
       "value": 215700,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -106,7 +126,9 @@
     "alt": "Дитячий майданчик у вигляді Павука від DiTu plays",
     "price": {
       "value": 255000,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -116,7 +138,9 @@
     "alt": "Деревне Місто - дитячий комплекс будиночків від DiTu plays",
     "price": {
       "value": 450000,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -126,7 +150,9 @@
     "alt": "Вігвам Міні - дитячий майданчик від DiTu plays",
     "price": {
       "value": 47300,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -136,7 +162,9 @@
     "alt": "Спортивний дитячий майданчик Ніндзя від DiTu plays",
     "price": {
       "value": 121100,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -146,7 +174,9 @@
     "alt": "Спортивний дитячий майданчик Кубик від DiTu plays",
     "price": {
       "value": 68000,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   },
   {
@@ -156,7 +186,9 @@
     "alt": "",
     "price": {
       "value": 77000,
-      "currency": "UAH"
+      "currency": "UAH",
+      "discountedValue": null,
+      "discountBadgeText": null
     }
   }
 ]
