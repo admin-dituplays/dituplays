@@ -5,6 +5,7 @@ export class ProductCatalog {
     this.products = [];
     this.originalOrder = [];
     this.exchangeRate = 41;
+    this.SORT_EXPIRATION_TIME = 30 * 60 * 1000;
   }
 
   async init() {
@@ -21,10 +22,15 @@ export class ProductCatalog {
   async loadProducts() {
     try {
       const response = await fetch(this.dataUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
       this.products = await response.json();
       this.originalOrder = [...this.products];
     } catch (error) {
       console.error('Помилка завантаження продуктів:', error);
+      this.products = [];
+      this.originalOrder = [];
     }
   }
 
@@ -39,28 +45,27 @@ export class ProductCatalog {
   }
 
   createProductCard(product) {
-    const priceObj = product.price;
-    const hasDiscount = 'discountedValue' in priceObj;
-    const originalPrice = this.formatPrice(priceObj.value, priceObj.currency);
-    const discountedPrice = hasDiscount ? this.formatPrice(priceObj.discountedValue, priceObj.currency) : null;
+    const { price, id, image, alt, title } = product;
+    const hasDiscount = typeof price.discountedValue === 'number' && price.discountedValue !== null;
+    const originalPrice = this.formatPrice(price.value, price.currency);
+    const discountedPrice = hasDiscount ? this.formatPrice(price.discountedValue, price.currency) : null;
 
     return `
       <div class="catalog__item catalog-card">
-        <a href="/${product.id}/" class="catalog-card__link">
+        <a href="/${id}/" class="catalog-card__link">
           <div class="catalog-card__image-container">
-            <img src="${product.image}" alt="${product.alt}" class="catalog-card__image" loading="lazy">
-            ${hasDiscount ? `<div class="catalog-card__badge catalog-card__badge_price">${priceObj.discountBadgeText}</div>` : ''}
+            <img src="${image}" alt="${alt}" class="catalog-card__image" loading="lazy">
+            ${hasDiscount ? `<div class="catalog-card__badge catalog-card__badge_price">${price.discountBadgeText}</div>` : ''}
           </div>
-          <h3 class="catalog-card__title">${product.title}</h3>
+          <h3 class="catalog-card__title">${title}</h3>
         </a>
         <div class="catalog-card__price-container">
           ${hasDiscount
-            ? `<span class="catalog-card__price-new">${discountedPrice}</span>
-               <span class="catalog-card__price catalog-card__price_old">${originalPrice}</span>`
+            ? `<span class="catalog-card__price_old">${originalPrice}</span><span class="catalog-card__price catalog-card__price_new">${discountedPrice}</span>`
             : `<span class="catalog-card__price">${originalPrice}</span>`}
         </div>
       </div>
-    `;
+    `.trim();
   }
 
   renderProducts(productsToRender = this.products) {
@@ -68,12 +73,14 @@ export class ProductCatalog {
   }
 
   sortProducts(order) {
+    const validOrders = ['default', 'asc', 'desc'];
+    order = validOrders.includes(order) ? order : 'default';
     if (order === 'default') {
       this.products = [...this.originalOrder];
     } else {
       this.products = [...this.originalOrder].sort((a, b) => {
-        const priceA = 'discountedValue' in a.price ? a.price.discountedValue : this.getPriceInUAH(a);
-        const priceB = 'discountedValue' in b.price ? b.price.discountedValue : this.getPriceInUAH(b);
+        const priceA = typeof a.price.discountedValue === 'number' ? a.price.discountedValue : this.getPriceInUAH(a);
+        const priceB = typeof b.price.discountedValue === 'number' ? b.price.discountedValue : this.getPriceInUAH(b);
         return order === 'desc' ? priceB - priceA : priceA - priceB;
       });
     }
@@ -81,7 +88,7 @@ export class ProductCatalog {
   }
 
   saveSorting(order) {
-    const expiration = Date.now() + 30 * 60 * 1000;
+    const expiration = Date.now() + this.SORT_EXPIRATION_TIME;
     localStorage.setItem('catalogSort', JSON.stringify({
       order,
       expires: expiration
@@ -101,8 +108,7 @@ export class ProductCatalog {
   }
 
   applySavedSorting() {
-    const savedOrder = this.getSavedSorting();
-    this.sortProducts(savedOrder);
+    this.sortProducts(this.getSavedSorting());
   }
 
   initSorting() {
@@ -114,7 +120,7 @@ export class ProductCatalog {
 
     const selected = sortControl.querySelector('[data-sort-selected]');
     const options = sortControl.querySelector('[data-sort-options]');
-    const optionItems = options.querySelectorAll('[data-sort-order]');
+    const optionItems = [...options.querySelectorAll('[data-sort-order]')];
 
     if (!selected || !options) {
       console.warn('Не знайдено [data-sort-selected] або [data-sort-options]');
@@ -122,15 +128,20 @@ export class ProductCatalog {
     }
 
     const savedOrder = this.getSavedSorting();
-    const savedOption = Array.from(optionItems).find(
-      item => item.getAttribute('data-sort-order') === savedOrder
-    );
-    selected.textContent = savedOption ? savedOption.textContent : 'Популярні моделі';
+    const savedOption = optionItems.find(item => item.getAttribute('data-sort-order') === savedOrder);
+    if (savedOption) {
+      selected.textContent = savedOption.textContent;
+    }
 
-    selected.addEventListener('click', () => {
-      sortControl.classList.toggle('active');
-    });
+    const setSelectedOption = (order) => {
+      optionItems.forEach(item => item.removeAttribute('data-selected'));
+      const selectedOption = optionItems.find(item => item.getAttribute('data-sort-order') === order);
+      if (selectedOption) selectedOption.setAttribute('data-selected', 'true');
+    };
 
+    setSelectedOption(savedOrder);
+
+    selected.addEventListener('click', () => sortControl.classList.toggle('active'));
     optionItems.forEach(item => {
       item.addEventListener('click', () => {
         const order = item.getAttribute('data-sort-order');
@@ -138,13 +149,12 @@ export class ProductCatalog {
         sortControl.classList.remove('active');
         this.sortProducts(order);
         this.saveSorting(order);
+        setSelectedOption(order);
       });
     });
 
     document.addEventListener('click', (e) => {
-      if (!sortControl.contains(e.target)) {
-        sortControl.classList.remove('active');
-      }
+      if (!sortControl.contains(e.target)) sortControl.classList.remove('active');
     });
   }
 }

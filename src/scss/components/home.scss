@@ -103,15 +103,6 @@
     font-family: $fontFamilyPrice;
     margin-top: rem(4);
   }
-  // .catalog-card__price-new
-  &__price-new {
-    display: block;
-    font-size: rem(14);
-    font-weight: 600;
-    line-height: 1.4;
-    text-decoration: line-through;
-    color: $cardPriceColorNew;
-  }
   // .catalog-card__price
   &__price {
     display: block;
@@ -122,8 +113,16 @@
 
     // .catalog-card__price_old
     &_old {
+      text-decoration: line-through;
       color: $cardPriceColorOld;
-      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    // .catalog-card__price_new
+    &_new {
+      line-height: 1.4;
+      color: $cardPriceColorNew;
+      font-weight: 600;
     }
   }
 }
@@ -132,7 +131,7 @@
 .sort-select {
   position: relative;
   width: max-content;
-  min-width: rem(210);
+  min-width: rem(240);
 
   &.active .sort-select__options {
     display: block;
@@ -148,6 +147,20 @@
     transform: translateY(-50%) rotate(180deg);
   }
 
+  &.active .sort-select__option[data-selected] {
+    background-color: $selectOptionActiveColor;
+  }
+
+  &.active .sort-select__options:hover .sort-select__option[data-selected] {
+    background-color: transparent;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $selectOptionHoverColor;
+      }
+    }
+  }
+
   // .sort-select__selected
   &__selected {
     padding: rem(8) rem(42) rem(8) rem(16);
@@ -155,6 +168,7 @@
     border-radius: rem(8);
     cursor: pointer;
     transition: border-color 0.2s;
+    font-size: rem(16);
 
     &:hover {
       border-color: $borderHoverColor;
@@ -178,6 +192,7 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
     padding: rem(6) rem(16);
+    font-size: rem(16);
 
     &:first-child {
       padding-top: rem(8);
