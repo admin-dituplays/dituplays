@@ -127,6 +127,18 @@ export class ProductCatalog {
     );
     selected.textContent = savedOption ? savedOption.textContent : 'Популярні моделі';
 
+    const setSelectedOption = (order) => {
+      optionItems.forEach(item => item.removeAttribute('data-selected'));
+      const selectedOption = Array.from(optionItems).find(
+        item => item.getAttribute('data-sort-order') === order
+      );
+      if (selectedOption) {
+        selectedOption.setAttribute('data-selected', 'true');
+      }
+    };
+
+    setSelectedOption(savedOrder);
+
     selected.addEventListener('click', () => {
       sortControl.classList.toggle('active');
     });
@@ -138,6 +150,7 @@ export class ProductCatalog {
         sortControl.classList.remove('active');
         this.sortProducts(order);
         this.saveSorting(order);
+        setSelectedOption(order);
       });
     });
 

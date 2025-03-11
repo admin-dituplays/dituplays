@@ -132,7 +132,7 @@
 .sort-select {
   position: relative;
   width: max-content;
-  min-width: rem(210);
+  min-width: rem(240);
 
   &.active .sort-select__options {
     display: block;
@@ -140,12 +140,26 @@
     background-color: $selectBackgroundColor;
     border: rem(2) solid $borderColor;
     border-radius: rem(8);
-    box-shadow: 0 rem(15) rem(40) 0 rgba(0, 0, 0, 0.17);
+    box-shadow: 0 rem(6) rem(40) 0 rgba(0, 0, 0, 0.17);
     overflow: hidden;
   }
 
   &.active .icon-arrow-down::before {
     transform: translateY(-50%) rotate(180deg);
+  }
+
+  &.active .sort-select__option[data-selected] {
+    background-color: $selectOptionActiveColor;
+  }
+
+  &.active .sort-select__options:hover .sort-select__option[data-selected] {
+    background-color: transparent;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $selectOptionHoverColor;
+      }
+    }
   }
 
   // .sort-select__selected
@@ -155,6 +169,7 @@
     border-radius: rem(8);
     cursor: pointer;
     transition: border-color 0.2s;
+    font-size: rem(16);
 
     &:hover {
       border-color: $borderHoverColor;
@@ -178,6 +193,7 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
     padding: rem(6) rem(16);
+    font-size: rem(16);
 
     &:first-child {
       padding-top: rem(8);
