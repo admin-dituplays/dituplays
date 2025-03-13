@@ -41,7 +41,7 @@ const initializeProductGallery = () => {
       },
       pagination: {
         el: paginationEl,
-        clickable: true,
+        clickable: false,
       },
       thumbs: { swiper: thumbsSlider },
     });

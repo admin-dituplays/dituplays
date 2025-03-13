@@ -315,7 +315,15 @@
 
     .swiper-pagination-bullet-active,
     .swiper-pagination-bullet {
+      width: rem(10);
+      height: rem(10);
       background-color: $sliderElementsColor;
+    }
+    .swiper-pagination-bullet {
+      opacity: .5;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
     }
     &.swiper-pagination-bullets {
       bottom: rem(16);
