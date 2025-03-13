@@ -198,14 +198,18 @@
   &__main-slide {
     width: 100%;
     height: 100%;
+    border-radius: rem(12);
+    overflow: hidden;
   }
   // .product-gallery__main-img
-  &__main-img {
+   // .product-gallery__main-video
+  &__main-img,
+  &__main-video  {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: rem(12);
-  } 
+  }
 
   // .product-gallery__thumbnails
   &__thumbnails {
@@ -302,6 +306,13 @@
   }
    // .product-gallery__pagination
    &__pagination {
+    transition: opacity 0.2s ease;
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     .swiper-pagination-bullet-active,
     .swiper-pagination-bullet {
       background-color: $sliderElementsColor;
