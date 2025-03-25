@@ -76,6 +76,10 @@
   // .product-page__gallery-container
   &__gallery-container {
     order: 1;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 
     @media screen and (min-width: $tablet) {
       grid-column: 1;
