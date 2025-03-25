@@ -13,7 +13,9 @@ const togglePaginationVisibility = (swiper, paginationEl) => {
 };
 
 const initializeProductGallery = () => {
-  document.querySelectorAll('.product-gallery').forEach(gallery => {
+  const galleries = document.querySelectorAll('.product-gallery');
+
+  galleries.forEach(gallery => {
     const thumbsEl = gallery.querySelector('.product-gallery__thumbnails');
     const mainEl = gallery.querySelector('.product-gallery__main');
     const paginationEl = gallery.querySelector('.product-gallery__pagination');
@@ -59,6 +61,32 @@ const initializeProductGallery = () => {
     });
 
     togglePaginationVisibility(mainSlider, paginationEl);
+  });
+
+  // Add MutationObserver to track changes to the active gallery
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(mutation => {
+      if (mutation.attributeName === 'class') {
+        const gallery = mutation.target;
+        const isActive = gallery.classList.contains('swatch-item-active');
+
+        if (!isActive) {
+          // Stop all videos in an inactive gallery
+          const videos = gallery.querySelectorAll('.product-gallery__main-video');
+          videos.forEach(video => {
+            if (!video.paused) {
+              video.pause();
+              video.currentTime = 0; // Optional: reset to the beginning
+            }
+          });
+        }
+      }
+    });
+  });
+
+  // Observe all galleries
+  galleries.forEach(gallery => {
+    observer.observe(gallery, { attributes: true, attributeFilter: ['class'] });
   });
 };
 
