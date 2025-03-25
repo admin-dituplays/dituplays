@@ -8,9 +8,6 @@
     "canonical": "https://www.dituplays.com/kazkovyi-budynochok/"
   })
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../css/style.min.css" />
-
   <meta property="og:title" content="Будиночок Казковий – казковий світ для дитячих розваг">
   <meta property="og:description" content='Поєднання естетики і функціональності. Затишна тераса, балкончик для малечі, гірка, пісочниця, гойдалка "гніздо-лелеки". Ідеально підходить для дітей від 1.5 років'>
   <meta property="og:image" content="https://wwww.dituplays.com/img/catalog/kazkovyi-budynochok-dlia-ditei.jpg">
@@ -19,6 +16,7 @@
   <meta property="og:url" content="https://www.dituplays.com/kazkovyi-budynochok/">
   <meta property="og:type" content="website">
   
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   @@include('../html/head-scripts.html', {})
 </head>
 
@@ -40,50 +38,95 @@
             </div>
 
             <!-- Gallery -->
-            <div class="product-page__gallery-container product-gallery product-gallery_vertical">
-              <div class="product-gallery__main swiper">
-                <div class="product-gallery__main-wrapper swiper-wrapper">
-                  <div class="product-gallery__main-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-1.jpg" data-swatch-item="grey" alt="" class="product-gallery__main-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-1.jpg" data-swatch-item="cream" alt="" class="product-gallery__main-img" loading="lazy">
+            <div class="product-page__gallery-container">
+              <div class="product-page__gallery product-gallery product-gallery_vertical" data-swatch-item="grey">
+                <div class="product-gallery__main swiper">
+                  <div class="product-gallery__main-wrapper swiper-wrapper">
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-1.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Вид спереду" class="product-gallery__main-img">
+                    </div>
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <video controls class="product-gallery__main-video">
+                        <source src="../video/kazkovyi/vulychnyi-dytiachyi-maidanchyk-kazkovyi.webm" type="video/webm">
+                        <source src="../video/kazkovyi/vulychnyi-dytiachyi-maidanchyk-kazkovyi.mp4" type="video/mp4">
+                        Ваш браузер не підтримує відтворення відео.
+                      </video>
+                    </div>
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-2.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Вид ззаду" class="product-gallery__main-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-3.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Гірка" class="product-gallery__main-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-4.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Лавочка" class="product-gallery__main-img" loading="lazy">
+                    </div>
                   </div>
-                  <div class="product-gallery__main-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-2.jpg" data-swatch-item="grey" alt="" class="product-gallery__main-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-2.jpg" data-swatch-item="cream" alt="" class="product-gallery__main-img" loading="lazy">
+                  <div class="product-gallery__navigation">
+                    <button class="product-gallery__button product-gallery__button_prev icon-gallery-prev"></button>
+                    <button class="product-gallery__button product-gallery__button_next icon-gallery-next"></button>
                   </div>
-                  <div class="product-gallery__main-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-3.jpg" data-swatch-item="grey" alt="" class="product-gallery__main-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-3.jpg" data-swatch-item="cream" alt="" class="product-gallery__main-img" loading="lazy">
-                  </div>
-                  <div class="product-gallery__main-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-4.jpg" data-swatch-item="grey" alt="" class="product-gallery__main-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-4.jpg" data-swatch-item="cream" alt="" class="product-gallery__main-img" loading="lazy">
+                  <div class="product-gallery__pagination swiper-pagination"></div>
+                </div>
+
+                <div class="product-gallery__thumbnails swiper">
+                  <div class="product-gallery__thumbnails-wrapper swiper-wrapper">
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-1.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Вид спереду" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/vulychnyi-dytiachyi-maidanchyk-kazkovyi-thumbnail.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - обкладинка для відео" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-2.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Вид ззаду" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-3.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Гірка" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../img/kazkovyi/grey/kazkovyi-grey-vertical-4.jpg" alt="Дитячий будиночок Казковий від DiTu plays, сірий - Лавочка" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
                   </div>
                 </div>
-                <div class="product-gallery__navigation">
-                  <button class="product-gallery__button product-gallery__button_prev icon-gallery-prev"></button>
-                  <button class="product-gallery__button product-gallery__button_next icon-gallery-next"></button>
-                </div>
-                <div class="product-gallery__pagination swiper-pagination"></div>
               </div>
 
-              <div class="product-gallery__thumbnails swiper">
-                <div class="product-gallery__thumbnails-wrapper swiper-wrapper">
-                  <div class="product-gallery__thumbnails-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-1.jpg" data-swatch-item="grey" alt="" class="product-gallery__thumbnails-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-1.jpg" data-swatch-item="cream" alt="" class="product-gallery__thumbnails-img" loading="lazy">
+              <div class="product-page__gallery product-gallery product-gallery_vertical" data-swatch-item="cream">
+                <div class="product-gallery__main swiper">
+                  <div class="product-gallery__main-wrapper swiper-wrapper">
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-1.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір" class="product-gallery__main-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-2.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір - Вид спереду" class="product-gallery__main-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-3.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір - Балкончик" class="product-gallery__main-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__main-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-4.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір - Лавочка" class="product-gallery__main-img" loading="lazy">
+                    </div>
                   </div>
-                  <div class="product-gallery__thumbnails-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-2.jpg" data-swatch-item="grey" alt="" class="product-gallery__thumbnails-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-2.jpg" data-swatch-item="cream" alt="" class="product-gallery__thumbnails-img" loading="lazy">
+                  <div class="product-gallery__navigation">
+                    <button class="product-gallery__button product-gallery__button_prev icon-gallery-prev"></button>
+                    <button class="product-gallery__button product-gallery__button_next icon-gallery-next"></button>
                   </div>
-                  <div class="product-gallery__thumbnails-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-3.jpg" data-swatch-item="grey" alt="" class="product-gallery__thumbnails-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-3.jpg" data-swatch-item="cream" alt="" class="product-gallery__thumbnails-img" loading="lazy">
-                  </div>
-                  <div class="product-gallery__thumbnails-slide swiper-slide">
-                    <img src="../@img/kazkovyi/grey/kazkovyi-grey-vertical-4.jpg" data-swatch-item="grey" alt="" class="product-gallery__thumbnails-img" loading="lazy">
-                    <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-4.jpg" data-swatch-item="cream" alt="" class="product-gallery__thumbnails-img" loading="lazy">
+                  <div class="product-gallery__pagination swiper-pagination"></div>
+                </div>
+  
+                <div class="product-gallery__thumbnails swiper">
+                  <div class="product-gallery__thumbnails-wrapper swiper-wrapper">
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-1.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-2.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір - Вид спереду" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-3.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір - Балкончик" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
+                    <div class="product-gallery__thumbnails-slide swiper-slide">
+                      <img src="../@img/kazkovyi/cream/kazkovyi-cream-vertical-4.jpg" alt="Дитячий будиночок Казковий від DiTu plays, кремовий колір - Лавочка" class="product-gallery__thumbnails-img" loading="lazy">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -182,37 +225,6 @@
     })
   </div>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    // Initialize tumbnails slider
-    const thumbsSlider = new Swiper('.product-gallery__thumbnails', {
-      loop: true,
-      direction: 'vertical',
-      spaceBetween: 8,
-      slidesPerView: 'auto',
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-
-    // Initialize main slider
-    const mainSlider = new Swiper('.product-gallery__main', {
-      loop: true,
-      spaceBetween: 4,
-
-      navigation: {
-        nextEl: '.product-gallery__button_next',
-        prevEl: '.product-gallery__button_prev',
-      },
-
-      pagination: {
-        el: '.product-gallery__pagination',
-        clickable: true,
-      },
-      thumbs: {
-        swiper: thumbsSlider,
-      },
-    });
-  </script>
-  <script type="module" src="/js/app.min.js"></script>
+  @@include('../html/footer-scripts.html', {})
 </body>
 </html>
