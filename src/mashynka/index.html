@@ -2,23 +2,21 @@
 <html lang="uk">
 <head>
   @@include('../html/head.html', {
-    "title": "Дитячий майданчик у вигляді машинки від DiTu plays",
-    "description": "",
+    "title": 'Вуличний дитячий майданчик "Машинка" від DiTu Plays',
+    "description": 'Замовляйте вуличний дитячий майданчик "Машинка" від DiTu Plays. Ігровий простір з  інтерактивним кузовом для дітей від 1,5 року. Доставка по Україні',
     "keywords": "",
     "canonical": "https://www.dituplays.com/mashynka/"
   })
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../css/style.min.css" />
-
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
+  <meta property="og:title" content='Вуличний дитячий майданчик "Машинка" від DiTu Plays'>
+  <meta property="og:description" content='Замовляйте вуличний дитячий майданчик "Машинка" від DiTu Plays. Ігровий простір з  інтерактивним кузовом для дітей від 1,5 року. Доставка по Україні'>
   <meta property="og:image" content="https://www.dituplays.com/img/catalog/mashynka.jpg">
-  <meta property="og:image:width" content="600">
+  <meta property="og:image:width" content="640">
   <meta property="og:image:height" content="360">
   <meta property="og:url" content="https://www.dituplays.com/mashynka/">
   <meta property="og:type" content="website">
 
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   @@include('../html/head-scripts.html', {})
 </head>
 
@@ -35,16 +33,29 @@
           <section class="product-page__main-info">
             <!-- Header -->
             <div class="product-page__header-container">
-              <h1 class="product-page__title">Машинка — унікальний ігровий простір для малюків</h1>
-              <p class="product-page__warning icon-alert text"><span class="text__bold">Зверніть увагу: </span>На фото можуть бути елементи, які не входить в базову комплектацію майданчика</p>
+              <h1 class="product-page__title">Дитячий майданчик "Машинка" – Унікальний ігровий простір для малюків</h1>
+              <!-- <p class="product-page__warning icon-alert text"><span class="text__bold">Зверніть увагу: </span>На фото можуть бути елементи, які не входить в базову комплектацію майданчика</p> -->
             </div>
 
             <!-- Gallery -->
-            <div class="product-page__gallery-container product-gallery">  <!-- product-gallery_vertical -->
+            <div class="product-page__gallery-container product-gallery product-gallery_vertical">
               <div class="product-gallery__main swiper">
                 <div class="product-gallery__main-wrapper swiper-wrapper">
                   <div class="product-gallery__main-slide swiper-slide">
-                    <img src="../@img/mashynka/mashynka-slider-1.jpg" alt="" class="product-gallery__main-img" loading="lazy">
+                    <img src="../img/mashynka/vulychnyi-dytiachyi-maidanchyk-mashynka.jpg" alt="Вуличний дитячий майданчик від DiTu plays у вигляді машинки" class="product-gallery__main-img">
+                  </div>
+                  <div class="product-gallery__main-slide swiper-slide">
+                    <video controls class="product-gallery__main-video">
+                      <source src="../video/mashynka/vulychnyi-dytiachyi-maidanchyk-mashynka.webm" type="video/webm">
+                      <source src="../video/mashynka/vulychnyi-dytiachyi-maidanchyk-mashynka.mp4" type="video/mp4">
+                      Ваш браузер не підтримує відтворення відео.
+                    </video>
+                  </div>
+                  <div class="product-gallery__main-slide swiper-slide">
+                    <img src="../img/mashynka/mashynka-ditu-plays.jpg" alt="Дерев’яний дитячий майданчик у вигляді машинки" class="product-gallery__main-img" loading="lazy">
+                  </div>
+                  <div class="product-gallery__main-slide swiper-slide">
+                    <img src="../img/mashynka/ihrovyi-dytiachyi-maidanchyk-mashynka.jpg" alt="Ігровий дитячий майданчик Машинка від DiTu plays" class="product-gallery__main-img" loading="lazy">
                   </div>
                 </div>
                 <div class="product-gallery__navigation">
@@ -57,7 +68,16 @@
               <div class="product-gallery__thumbnails swiper">
                 <div class="product-gallery__thumbnails-wrapper swiper-wrapper">
                   <div class="product-gallery__thumbnails-slide swiper-slide">
-                    <img src="../@img/mashynka/mashynka-slider-1.jpg" alt="" class="product-gallery__thumbnails-img" loading="lazy">
+                    <img src="../img/mashynka/vulychnyi-dytiachyi-maidanchyk-mashynka.jpg" alt="Вуличний дитячий майданчик від DiTu plays у вигляді машинки" class="product-gallery__thumbnails-img" loading="lazy">
+                  </div>
+                  <div class="product-gallery__thumbnails-slide swiper-slide">
+                    <img src="../img/mashynka/vulychnyi-dytiachyi-maidanchyk-mashynka-video-thumbnail.jpg" alt="Вуличний дитячий майданчик Машинка від DiTu plays - обкладинка для відео" class="product-gallery__thumbnails-img" loading="lazy">
+                  </div>
+                  <div class="product-gallery__thumbnails-slide swiper-slide">
+                    <img src="../img/mashynka/mashynka-ditu-plays.jpg" alt="Дерев’яний дитячий майданчик у вигляді машинки" class="product-gallery__thumbnails-img" loading="lazy">
+                  </div>
+                  <div class="product-gallery__thumbnails-slide swiper-slide">
+                    <img src="../img/mashynka/ihrovyi-dytiachyi-maidanchyk-mashynka.jpg" alt="Ігровий дитячий майданчик Машинка від DiTu plays" class="product-gallery__thumbnails-img" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -66,7 +86,12 @@
             <!-- Description -->
             <div class="product-page__description-container">
               <h2 class="product-page__description-title">Опис майданчика</h2>
-              <p class="product-page__description-text text">Машинка від DiTu plays — це унікальний ігровий простір для дітей, виконаний у формі автомобіля.</p>
+              <p class="product-page__description-text text">Дитячий майданчик "Машинка" від DiTu Plays – це спеціально розроблений ігровий елемент для найменших дослідників від 1.5 року. Ця безпечна та розвиваюча модель стане першим кроком до активних ігор та пізнання світу для вашого малюка.</p>
+              <p class="product-page__description-text text">Зручний салон з кермом запрошує маленьких водіїв до перших "подорожей". Ігровий елемент з трубами, куди діти можуть кидати м’ячик, спостерігаючи, як він скочується по похилих дощечках в кузові машинки, стимулює розвитку моторики та координації рухів. Яскраві кольори та приємна текстура дерева роблять гру ще більш захоплюючою.</p>
+              <p class="product-page__description-text text">Цей ігровий елемент ідеально підходить як для приватних дитячих майданчиків, так і для комерційних ігрових зон, дитячих садків та парків. "Машинка" не тільки розважає, але й сприяє розвитку дитячої уяви, творчості та соціальної взаємодії.</p>
+              <p class="product-page__description-text text">Ми використовуємо тільки гіпоалергенні та екологічно чисті матеріали для виготовлення "Машинки": масив сосни, букові нагелі та безпечні фарби на водній основі Kemichal. Конструкція розроблена з особливою увагою до безпеки найменших дітей.</p>
+              <p class="product-page__description-text text">Подаруйте вашому малюку радість відкриттів та активних ігор з дитячим майданчиком  "Машинка" від DiTu plays!</p>
+              <p class="product-page__description-text text">Ми гарантуємо швидке виготовлення (до 4 тижнів), а також пропонуємо доставку та професійний монтаж по всій Україні.</p>
             </div>
 
             <!-- Details -->
@@ -110,15 +135,15 @@
                 <div class="product-details__group">
                   <div class="product-details__group-columns">
                     <div class="product-details__group-column">
-                      <p class="product-details__item text icon-calendar"><span class="text__bold">Терміни. </span>Виробництво займає <span class="text__bold">до 2 місяців</p>
+                      <p class="product-details__item text icon-calendar"><span class="text__bold">Терміни. </span>Виробництво займає <span class="text__bold">до 4 тижнів</p>
                     </div>
                     <div class="product-details__group-column">
-                      <p class="product-details__item text icon-age-15"><span class="text__bold">Вік дітей. </span>Ідеальний для дітей віком <span class="text__bold">від 1.5 роки</span></p>
+                      <p class="product-details__item text icon-age-15"><span class="text__bold">Вік дітей. </span>Ідеальний для дітей віком <span class="text__bold">від 1.5 року</span></p>
                     </div>
                   </div>
                   <div class="product-details__group-columns">
                     <div class="product-details__group-column">
-                      <p class="product-details__item text icon-size"><span class="text__bold">Розміри. </span>1.5м x 1м x 0.5м(без простору навколо майданчика)</p>
+                      <p class="product-details__item text icon-size"><span class="text__bold">Розміри. </span>2м x 1м x 1м (без простору навколо майданчика)</p>
                     </div>
                     <!-- <div class="product-details__group-column">
                       <p class="product-details__item text icon-weight"><span class="text__bold">Вага. </span>Гірка, гойдалки, скеледром та інші елементи розраховані на навантаження <span class="text__bold">до 70кг</span></p>
@@ -140,37 +165,6 @@
     })
   </div>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    // Initialize tumbnails slider
-    const thumbsSlider = new Swiper('.product-gallery__thumbnails', {
-      loop: true,
-      // direction: 'vertical',
-      spaceBetween: 8,
-      slidesPerView: 'auto',
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-
-    // Initialize main slider
-    const mainSlider = new Swiper('.product-gallery__main', {
-      loop: true,
-      spaceBetween: 4,
-
-      navigation: {
-        nextEl: '.product-gallery__button_next',
-        prevEl: '.product-gallery__button_prev',
-      },
-
-      pagination: {
-        el: '.product-gallery__pagination',
-        clickable: true,
-      },
-      thumbs: {
-        swiper: thumbsSlider,
-      },
-    });
-  </script>
-  <script type="module" src="/js/app.min.js"></script>
+  @@include('../html/footer-scripts.html', {})
 </body>
 </html>

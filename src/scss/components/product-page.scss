@@ -202,12 +202,17 @@
     overflow: hidden;
   }
   // .product-gallery__main-img
-   // .product-gallery__main-video
-  &__main-img,
-  &__main-video  {
+  &__main-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: rem(12);
+  }
+  // .product-gallery__main-video
+  &__main-video  {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     border-radius: rem(12);
   }
 
