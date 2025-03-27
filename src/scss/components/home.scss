@@ -161,6 +161,10 @@
     }
   }
 
+  &.active .sort-select__selected {
+    border-color: $borderHoverColor;
+  }
+
   // .sort-select__selected
   &__selected {
     padding: rem(8) rem(42) rem(8) rem(16);
