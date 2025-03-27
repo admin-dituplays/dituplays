@@ -3,9 +3,10 @@ const CACHE_KEY = 'usdToUahRate';
 const CACHE_EXPIRY_TIME = 60 * 60 * 1000; // 1 hour
 
 function formatUAHPrice(price) {
-  const formattedPrice = parseFloat(price).toFixed(2);
+  // const formattedPrice = parseFloat(price).toFixed(2);
+  const roundedPrice = Math.ceil(parseFloat(price) / 100) * 100;
   // Use toLocaleString for number formatting with 'uk-UA' locale to potentially get space separators, and append ' ₴'
-  return new Intl.NumberFormat('uk-UA').format(formattedPrice) + ' ₴';
+  return new Intl.NumberFormat('uk-UA').format(roundedPrice) + ' ₴';
 }
 
 async function getExchangeRate() {
