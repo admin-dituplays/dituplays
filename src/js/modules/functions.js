@@ -66,4 +66,25 @@ export function smoothScroll() {
 }
 
 
-// Show more comments button
+// Read more button
+export const initCollapsibleSections = () => {
+  const containers = document.querySelectorAll('[data-collapsible-container]');
+
+  containers.forEach(container => {
+    const content = container.querySelector('[data-collapsible-content]');
+    const toggle = container.querySelector('[data-collapsible-toggle]');
+
+    if (!content || !toggle) return;
+
+    const children = content.children;
+    
+    if (children.length > 2) {
+      toggle.addEventListener('click', () => {
+        content.classList.toggle('expanded');
+        toggle.classList.toggle('expanded');
+      });
+    } else {
+      toggle.style.display = 'none';
+    }
+  });
+}

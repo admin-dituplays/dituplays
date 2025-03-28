@@ -24,8 +24,8 @@ $headerBackgroundColor: #333333;
 $headerActionsHover: #707070;
 $footerBackgroundColor: #333333;
 
-$buttonsBackgroundColor: #7BB57C;
-$buttonsBackgroundHover: #4C7A4D;
+// $buttonsBackgroundColor: #7BB57C;
+// $buttonsBackgroundHover: #4C7A4D;
 $mainLinkColor: #3B95C4;
 
 // $backgroundColorDark: #2D3250;
@@ -57,6 +57,10 @@ $brandColorYellow: #FFBD03;
 $brandColorYellowAlt: #FFDD23;
 $brandColorPurple: #80669D;
 $brandColorPurpleAlt: #9E84BB;
+
+// Nav Menu
+$navCatalogButtonColor: $brandColorGreen;
+$navCatalogButtonHoverColor: $brandColorGreenAlt;
 
 // Slider
 $sliderElementsColor: #F3F3F3; 

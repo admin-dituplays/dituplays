@@ -24,10 +24,7 @@
 
 <body>
   <div class="wrapper">
-    @@include('../html/header.html', {
-      "header-logo-link": "../@img/ditu-plays-logo.png",
-      "nav-logo-link": "../@img/ditu-plays-logo.png",
-    })
+    @@include('../html/header.html', {})
     
     <main class="main">
       <div class="product-page">
@@ -88,19 +85,20 @@
             </div>
 
             <!-- Description -->
-            <div class="product-page__description-container">
-              <h2 class="product-page__description-title">Опис майданчика</h2>
-              <p class="product-page__description-text text">Вігвам міні — це зменшена версія популярної моделі <a href="/vigvam-dytiachyi-maidanchyk/" target="_blank" class="text__link">Вігвам</a>, яка зберегла всі ключові переваги, але стала більш компактною. Його розмір ідеально підходить для невеликого простору, а комплектація задовольнить найактивніших маленьких дослідників</p>
-
-              <p class="product-page__description-list-title text text__bold">У комплектацію входять:</p>
-              <ul class="product-page__description-list list list_default">
-                <li class="list__item">Скеледром для тренування сили та витривалості;</li>
-                <li class="list__item">Гойдалка "гніздо лелеки" для спокійного відпочинку;</li>
-                <li class="list__item">Сітка для розвитку координації;</li>
-                <li class="list__item">Гірка для веселих спусків</li>
-              </ul>
-
-              <p class="product-page__description-text text">Майданчик виготовлений з сосни камерної сушки. Також ми використовуємо бельгійські комплектуючі, лавсановий канат та італійські фарби на водній основі Kemichal. Пропонуємо доставку і монтаж по всій Україні, навіть взимку</p>
+            <div class="product-page__description-container product-description" data-collapsible-container>
+              <h2 class="product-description__title">Опис майданчика</h2>
+              <div class="product-description__content" data-collapsible-content>
+                <p class="product-description__text text">Вігвам міні — це зменшена версія популярної моделі <a href="/vigvam-dytiachyi-maidanchyk/" target="_blank" class="text__link">Вігвам</a>, яка зберегла всі ключові переваги, але стала більш компактною. Його розмір ідеально підходить для невеликого простору, а комплектація задовольнить найактивніших маленьких дослідників</p>
+                <h3 class="product-description__list-title text text__bold">Комплектацію майданчика</h3>
+                <ul class="product-description__list list list_default">
+                  <li class="list__item">Скеледром для тренування сили та витривалості;</li>
+                  <li class="list__item">Гойдалка "гніздо лелеки" для спокійного відпочинку;</li>
+                  <li class="list__item">Сітка для розвитку координації;</li>
+                  <li class="list__item">Гірка для веселих спусків</li>
+                </ul>
+                <p class="product-description__text text">Майданчик виготовлений з сосни камерної сушки. Також ми використовуємо бельгійські комплектуючі, лавсановий канат та італійські фарби на водній основі Kemichal. Пропонуємо <a href="../dostavka-ta-montazh/" class="text__link">доставку та монтаж</a> по всій Україні, навіть взимку</p>
+              </div>
+              <button class="product-description__read-more" data-collapsible-toggle>Читати повністю <span class="product-description__read-more-arrow">🡣</span></button>
             </div>
 
             <!-- Details -->
@@ -171,9 +169,7 @@
       </div>
     </main>
   
-    @@include('../html/footer.html', {
-      "footer-logo-link": "../@img/ditu-plays-logo-light.png",
-    })
+    @@include('../html/footer.html', {})
   </div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

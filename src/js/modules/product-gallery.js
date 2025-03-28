@@ -29,7 +29,8 @@ const initializeProductGallery = () => {
       loop: true,
       direction: thumbsDirection,
       spaceBetween: 8,
-      slidesPerView: 'auto',
+      // slidesPerView: 'auto',
+      slidesPerView: 4,
       freeMode: true,
       watchSlidesProgress: true,
     });

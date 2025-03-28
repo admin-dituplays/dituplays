@@ -24,10 +24,7 @@
 
 <body>
   <div class="wrapper">
-    @@include('../html/header.html', {
-      "header-logo-link": "../@img/ditu-plays-logo.png",
-      "nav-logo-link": "../@img/ditu-plays-logo.png",
-    })
+    @@include('../html/header.html', {})
     
     <main class="main">
       <div class="product-page">
@@ -100,18 +97,19 @@
             </div>
 
             <!-- Description -->
-            <div class="product-page__description-container">
-              <h2 class="product-page__description-title">Опис майданчика</h2>
-              <p class="product-page__description-text text">Спортивно-ігровий комплекс Ніндзя створений для дітей, які люблять активність, виклики та досягнення. Ця модель включає різноманітні елементи, які стимулюють розвиток координації, сили та спритності. У комплектацію входять:</p>
-
-              <ul class="product-page__description-list list list_default">
-                <li class="list__item">Руколазка;</li>
-                <li class="list__item">Гірка;</li>
-                <li class="list__item">Скеледром;</li>
-                <li class="list__item">Бруси та інші спортивні елементи</li>
-              </ul>
-
-              <p class="product-page__description-text text">Майданчик виготовлений із масиву сосни камерної сушки, букових нагелів і бельгійських комплектуючих. Фарби на водній основі Kemichal гарантують безпеку для дітей. Доставка та монтаж здійснюються по всій Україні у будь-яку пору року</p>
+            <div class="product-page__description-container product-description" data-collapsible-container>
+              <h2 class="product-description__title">Опис майданчика</h2>
+              <div class="product-description__content" data-collapsible-content>
+                <p class="product-description__text text">Спортивно-ігровий комплекс Ніндзя створений для дітей, які люблять активність, виклики та досягнення. Ця модель включає різноманітні елементи, які стимулюють розвиток координації, сили та спритності. У комплектацію входять:</p>
+                <ul class="product-description__list list list_default">
+                  <li class="list__item">Руколазка;</li>
+                  <li class="list__item">Гірка;</li>
+                  <li class="list__item">Скеледром;</li>
+                  <li class="list__item">Бруси та інші спортивні елементи</li>
+                </ul>
+                <p class="product-description__text text">Майданчик виготовлений із масиву сосни камерної сушки, букових нагелів і бельгійських комплектуючих. Фарби на водній основі Kemichal гарантують безпеку для дітей. Доставка та монтаж здійснюються по всій Україні у будь-яку пору року</p>
+              </div>
+              <button class="product-description__read-more" data-collapsible-toggle>Читати повністю <span class="product-description__read-more-arrow">🡣</span></button>
             </div>
 
             <!-- Details -->
@@ -180,9 +178,7 @@
       </div>
     </main>
   
-    @@include('../html/footer.html', {
-      "footer-logo-link": "../@img/ditu-plays-logo-light.png",
-    })
+    @@include('../html/footer.html', {})
   </div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
