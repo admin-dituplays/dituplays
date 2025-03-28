@@ -15,12 +15,17 @@
   &__link {
     color: $linkColorMain;
     text-decoration: underline;
-    transition: all 0.3s;
+    transition: color 0.3s;
 
     &:visited,
-    &:hover,
     &:active {
       color: $linkColorAlt;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $linkColorAlt;
+      }
     }
   }
 }
@@ -550,4 +555,110 @@
       margin-bottom: rem(8);
     }
   }
-} 
+}
+
+.product-description {
+  // .product-description__content
+  &__content {
+    > *:nth-child(n + 3) {
+      display: none;
+    }
+
+    &.expanded {
+      > *:nth-child(n + 3) {
+        display: block;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+  }
+  // .product-description__title
+  &__title {
+    font-size: rem(16);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: rem(12);
+  }
+  // .product-description__text
+  &__text {
+  }
+  // .product-description__list-title
+  &__list-title {
+    margin-left: rem(16);
+  }
+  // .product-description__list
+  &__list {
+    margin-left: rem(16);
+
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+  // .product-description__read-more
+  &__read-more {
+    color: $linkColorMain;
+    text-decoration: underline;
+    transition: color 0.3s;
+    line-height: 1.4;
+
+    &:visited,
+    &:active {
+      color: $linkColorAlt;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $linkColorAlt;
+
+        // &::before,
+        // &::after {
+        //   background-color: $linkColorAlt;
+        // }
+      }
+    }
+
+    &.expanded {
+      display: none;
+    }
+  }
+  // .product-description__read-more-arrow
+  &__read-more-arrow {
+    // position: relative;
+
+    // &::before,
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   width: rem(6);
+    //   height: rem(1);
+    //   background-color: $linkColorMain;
+    //   top: 42%;
+    //   transform: translateY(-50%);
+    //   border-radius: rem(2);
+    //   transition: background-color 0.3s;
+    // }
+    // &::before {
+    //   right: rem(-14);
+    //   transform: rotate(35deg);
+    //   transform-origin: left center;
+    // }
+    // &::after {
+    //   right: rem(-18);
+    //   transform: rotate(-35deg);
+    //   transform-origin: right center;
+    // }
+  }
+}
+.collapsible {
+}

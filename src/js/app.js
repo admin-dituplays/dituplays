@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Product Page Slider
   initializeProductGallery();
+
+  // Read more toggle
+  functions.initCollapsibleSections();
 });
 
 import { ProductCatalog } from './modules/catalog.js';
