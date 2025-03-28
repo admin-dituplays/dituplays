@@ -106,12 +106,12 @@
     margin: rem(24) auto;
     height: rem(40);
     border-radius: rem(6);
-    background-color: $buttonsBackgroundColor;
+    background-color: $navCatalogButtonColor;
     transition: background-color 0.2s;
   
     @media (any-hover: hover) {
       &:hover {
-        background-color: $buttonsBackgroundHover;
+        background-color: $navCatalogButtonHoverColor;
       }
     }
   }
