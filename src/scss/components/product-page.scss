@@ -184,7 +184,7 @@
 // Gallery
 .product-gallery {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   gap: rem(8);
   position: relative;
 
@@ -195,8 +195,13 @@
 
   // .product-gallery__main
   &__main {
-    width: 100%;
     position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    @media screen and (min-width: $desktop) {
+      width: calc(80.206% - rem(4));
+    }
   }
   // .product-gallery__main-wrapper
   &__main-wrapper {
@@ -235,7 +240,8 @@
 
     @media screen and (min-width: $desktop) {
       display: block;
-      width: 100%;
+      aspect-ratio: 4 / 5;
+      width: calc(19.794% - rem(4));
     }
   }
   // .product-gallery__thumbnails-wrapper
@@ -244,9 +250,9 @@
   // .product-gallery__thumbnails-slide
   &__thumbnails-slide {
     @media screen and (min-width: $tablet) {
-      max-width: rem(180);
-      height: 100%;
-      aspect-ratio: 4 / 3;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
       cursor: pointer;
       opacity: .7;
       transition: opacity 0.3s ease;
@@ -345,37 +351,6 @@
     }
     &.swiper-pagination-bullets {
       bottom: rem(16);
-    }
-  }
-
-  // Vertical Slider (Change direction at js slider initialization)
-  &.product-gallery_vertical {
-    flex-direction: row-reverse;
-    
-    .product-gallery__main {
-      aspect-ratio: 4 / 5;
-      @media screen and (min-width: $desktop) {
-        // width: 76.30%;
-        // width: calc(76.30% - rem(4));
-        width: calc(80.206% - rem(4));
-      }
-    }
-    .product-gallery__thumbnails {
-      display: none;
-
-      @media screen and (min-width: $desktop) {
-        display: block;
-        // width: rem(160);
-        // width: 23.70%;
-        aspect-ratio: 4 / 5;
-        // width: calc(23.70% - rem(4));
-        width: calc(19.794% - rem(4));
-      }
-    }
-    .product-gallery__thumbnails-slide {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 5;
     }
   }
 }
