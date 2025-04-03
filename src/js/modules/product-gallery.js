@@ -22,12 +22,12 @@ const initializeProductGallery = () => {
 
     if (!thumbsEl || !mainEl) return;
 
-    const isVertical = gallery.classList.contains('product-gallery_vertical');
-    const thumbsDirection = isVertical ? 'vertical' : 'horizontal';
+    // const isVertical = gallery.classList.contains('product-gallery_vertical');
+    // const thumbsDirection = isVertical ? 'vertical' : 'horizontal';
 
     const thumbsSlider = new Swiper(thumbsEl, {
       loop: true,
-      direction: thumbsDirection,
+      direction: 'vertical',
       spaceBetween: 8,
       // slidesPerView: 'auto',
       slidesPerView: 4,
