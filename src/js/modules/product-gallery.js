@@ -1,4 +1,5 @@
 import Swiper from 'swiper/bundle';
+// import Swiper, { Navigation, Pagination, Thumbs, Zoom } from 'swiper/bundle';
 // import 'swiper/swiper-bundle.css';
 
 const togglePaginationVisibility = (swiper, paginationEl) => {
@@ -38,6 +39,7 @@ const initializeProductGallery = () => {
     const mainSlider = new Swiper(mainEl, {
       loop: true,
       spaceBetween: 4,
+      // modules: [Navigation, Pagination, Thumbs, Zoom],
       navigation: {
         nextEl: gallery.querySelector('.product-gallery__button_next'),
         prevEl: gallery.querySelector('.product-gallery__button_prev'),
@@ -47,6 +49,10 @@ const initializeProductGallery = () => {
         clickable: false,
       },
       thumbs: { swiper: thumbsSlider },
+      zoom: {
+        maxRatio: 3,
+        minRatio: 1,
+      },
     });
 
     mainSlider.on('slideChangeTransitionStart', () => {
