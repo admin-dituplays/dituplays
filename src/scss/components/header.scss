@@ -3,31 +3,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // background: $dituTopHeaderColor;
-  background: linear-gradient(to bottom right, #CE334F, #FF5985);
-  color: $textColorLight;
   text-align: center;
 
+  background: linear-gradient(135deg, $brandColorGreen, $brandColorGreenAlt);
+  color: $textColorLight;
+
+  padding: rem(8) rem(12);
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
   @media (min-width: $tablet) {
-    min-height: rem(38);
-    // margin-top: rem(38);
+    padding: rem(12) rem(16);
   }
-  
+
   // .top-banner__text
   &__text {
-    font-weight: 600;
+    font-weight: 500;
     font-size: rem(12);
-    margin: rem(6);
-    line-height: normal;
+    line-height: 1.4;
 
     @media (min-width: $mobile) {
-      font-size: rem(14);
+      font-size: rem(15);
     }
+
     @media (min-width: $tablet) {
       font-size: rem(18);
     }
   }
 }
+
 .header {
   position: sticky;
   top: 0;
