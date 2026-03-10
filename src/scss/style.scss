@@ -222,6 +222,10 @@ $desktop: em(1023.98);
     text-align: center;
     // .footer__group_contacts
     &_contacts {
+      @media (min-width: $tablet) {
+        padding-left: rem(24);
+        padding-right: rem(24);
+      }
     }
     // .footer__group_slogan
     &_slogan {

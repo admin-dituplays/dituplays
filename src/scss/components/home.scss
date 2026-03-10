@@ -1,8 +1,47 @@
 .main {
 }
 
+.hero {
+  margin-top: rem(16);
+  margin-bottom: rem(24);
+
+  @media screen and (min-width: $tabletSmall) {
+    margin-top: rem(24);
+    margin-bottom: rem(28);
+  }
+
+  &__container {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: rem(20);
+    font-weight: 700;
+    color: $brandColorBlack;
+    margin-bottom: rem(12);
+
+    @media screen and (min-width: $mobile) {
+     font-size: rem(24);
+    }
+
+    @media screen and (min-width: $tabletSmall) {
+     font-size: rem(28);
+     margin-bottom: rem(16);
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(16);
+    color: $brandColorBlack;
+
+    @media screen and (min-width: $tabletSmall) {
+     font-size: rem(18);
+    }
+  }
+}
+
 .price-update {
-  padding: rem(40) 0;
+  margin-bottom: rem(28);
 
   // .price-update__content
   &__content {
@@ -10,9 +49,11 @@
     border-left: 6px solid $brandColorGreen;
     border-right: 6px solid $brandColorGreenAlt;
     border-radius: rem(12);
-    padding: rem(28);
+    padding: rem(24) rem(16);
     text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+
   }
 
   // .price-update__title
