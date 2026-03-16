@@ -51,3 +51,10 @@ RewriteRule ^about/?$ https://www.dituplays.com/komanda-ditu-plays/ [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [L]
+
+# Вимкнення кешування для HTML
+<FilesMatch "\.(html|htm)$">
+Header set Cache-Control "no-cache, no-store, must-revalidate"
+Header set Pragma "no-cache"
+Header set Expires "0"
+</FilesMatch>
