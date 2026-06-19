@@ -6,6 +6,52 @@ const togglePaginationVisibility = (swiper, paginationEl) => {
   paginationEl.classList.toggle('hidden', !!isVideoSlide);
 };
 
+const primeVideo = (video) => {
+  if (video.dataset.primed) return;
+
+  if (video.readyState < 1) {
+    video.preload = 'metadata';
+    video.load();
+  }
+
+  const onReady = () => {
+    video.currentTime = 0.01;
+    video.dataset.primed = 'true';
+    video.removeEventListener('loadedmetadata', onReady);
+  };
+
+  if (video.readyState >= 1) {
+    video.currentTime = 0.01;
+    video.dataset.primed = 'true';
+  } else {
+    video.addEventListener('loadedmetadata', onReady);
+  }
+};
+
+const handleFullscreenChange = (mainEl, mainSlider) => {
+  const isFullscreen = !!(
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.mozFullScreenElement ||
+    document.msFullscreenElement
+  );
+
+  if (!isFullscreen) {
+    setTimeout(() => {
+      mainEl.querySelectorAll('video').forEach(video => {
+        video.blur();
+        video.controls = false;
+        requestAnimationFrame(() => { video.controls = true; });
+      });
+
+      mainSlider.update();
+      mainSlider.touchEventsData.isTouched = false;
+      mainSlider.touchEventsData.isMoved = false;
+      mainEl.focus({ preventScroll: true });
+    }, 300);
+  }
+};
+
 const initializeProductGallery = () => {
   const galleries = document.querySelectorAll('.product-gallery');
 
@@ -56,39 +102,44 @@ const initializeProductGallery = () => {
       });
     });
 
+    mainSlider.on('slideChangeTransitionEnd', () => {
+      const activeSlide = mainSlider.slides[mainSlider.activeIndex];
+      const video = activeSlide && activeSlide.querySelector('video');
+      if (video) primeVideo(video);
+    });
+
+    const initialSlide = mainSlider.slides[mainSlider.activeIndex];
+    const initialVideo = initialSlide && initialSlide.querySelector('video');
+    if (initialVideo) primeVideo(initialVideo);
+
+    mainEl.querySelectorAll('video').forEach(video => {
+      video.addEventListener('play', () => {
+        if (!video.dataset.primed) {
+          video.dataset.primed = 'true';
+        }
+      }, { once: false });
+
+      video.addEventListener('mouseenter', () => primeVideo(video), { once: true });
+    });
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          primeVideo(entry.target);
+          videoObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    mainEl.querySelectorAll('video').forEach(video => videoObserver.observe(video));
+
+    const onFullscreenChange = () => handleFullscreenChange(mainEl, mainSlider);
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+    document.addEventListener('mozfullscreenchange', onFullscreenChange);
+    document.addEventListener('MSFullscreenChange', onFullscreenChange);
+
     togglePaginationVisibility(mainSlider, paginationEl);
-
-    const handleFullscreenChange = () => {
-      const isFullscreen = !!(
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement
-      );
-
-      if (!isFullscreen) {
-        setTimeout(() => {
-          mainEl.querySelectorAll('video').forEach(video => {
-            video.blur();
-            video.controls = false;
-            requestAnimationFrame(() => {
-              video.controls = true;
-            });
-          });
-
-          mainSlider.update();
-          mainSlider.touchEventsData.isTouched = false;
-          mainSlider.touchEventsData.isMoved = false;
-
-          mainEl.focus({ preventScroll: true });
-        }, 300);
-      }
-    };
-
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
   });
 
   const observer = new MutationObserver((mutations) => {
